@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://northernsuppliers.net.au/sitemap.xml
