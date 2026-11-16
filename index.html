@@ -159,8 +159,7 @@ a,button,summary,input,select,label{touch-action:manipulation}
 .hsearch input::placeholder{color:#5c6b8a}
 .hsearch input::-webkit-search-cancel-button{display:none}
 .hsearch .btn{min-height:68px;border-radius:19px;padding-inline:2rem;font-size:1.1rem}
-.hsearch kbd{font:inherit;font-size:.85rem;color:#51607f;border:1px solid #cfd9ea;border-radius:8px;padding:.1rem .5rem;margin-right:.4rem}
-@media (max-width:560px){ .hsearch kbd{display:none} .hsearch .btn{padding-inline:1.1rem;font-size:1rem;min-height:56px;border-radius:16px} .hsearch-field{padding:.5rem .5rem .5rem 1rem;min-height:72px;border-radius:22px;gap:.4rem} .hsearch-field svg{width:24px;height:24px} .hsearch input{font-size:1.08rem;height:56px} }
+@media (max-width:560px){ .hsearch .btn{padding-inline:1.1rem;font-size:1rem;min-height:56px;border-radius:16px} .hsearch-field{padding:.5rem .5rem .5rem 1rem;min-height:72px;border-radius:22px;gap:.4rem} .hsearch-field svg{width:24px;height:24px} .hsearch input{font-size:1.08rem;height:56px} }
 .suggest{position:absolute;left:0;right:0;top:calc(100% + 10px);z-index:10;background:#fff;color:#0a1b3d;border-radius:22px;box-shadow:0 2px 4px rgba(3,12,32,.15),var(--sh-3);padding:.5rem;display:grid;gap:2px;}
 .sg{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.85rem;align-items:center;padding:.45rem .5rem;border-radius:14px}
 .sg:hover,.sg:focus-within{background:#eef3fb}
@@ -323,22 +322,37 @@ a,button,summary,input,select,label{touch-action:manipulation}
 .pool-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(2.5rem,6vw,5rem);align-items:center}
 .pool h2{color:#fff}
 .pool .lede{color:var(--on-blue-muted)}
-.svc{list-style:none;margin:0 0 2rem;padding:0;border-top:1px solid rgba(255,255,255,.28)}
-.svc li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.2rem 1.5rem;align-items:baseline;padding:1.15rem 0;border-bottom:1px solid rgba(255,255,255,.28)}
-.svc b{font-family:var(--display);font-weight:600;font-size:1.29rem;letter-spacing:-.03em;line-height:1.15}
-.svc .price{font-family:var(--display);font-size:1.29rem;font-weight:600;color:var(--gold-on-blue);white-space:nowrap;letter-spacing:-.03em}
-.svc span{grid-column:1/-1;color:var(--on-blue-muted);font-size:1.02rem}
+.pool .by{font-size:1.05rem;color:var(--gold-on-blue);font-weight:600}
+.row{display:flex;flex-wrap:wrap;gap:.6rem}
+.row.mid{justify-content:center}
+.drange{display:grid;gap:.6rem;margin-bottom:1.75rem}
+.dr{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:1rem;align-items:center;padding:.6rem .75rem .6rem .6rem;border-radius:20px;background:rgba(6,30,84,.6);box-shadow:inset 0 0 0 1px rgba(255,255,255,.22),inset 0 1px 0 rgba(255,255,255,.22)}
+.dr-open{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:64px minmax(0,1fr);gap:1rem;align-items:center;min-width:0;border-radius:14px}
+.dr-open:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.dr-open img{width:64px;height:64px;border-radius:14px;background:#fff;object-fit:contain}
+.dr-open b{display:block;font-weight:600;font-size:1.05rem;line-height:1.25}
+.dr-open span{display:block;color:var(--on-blue-muted);font-size:.95rem}
+.dr-open:hover b{text-decoration:underline}
 .dolphin{position:relative;display:grid;justify-items:center}
-.dolphin-img{position:relative;z-index:3;width:min(88%,440px);margin-bottom:-22%;filter:drop-shadow(0 34px 30px rgba(2,30,84,.55))}
+.dolphin-img{position:relative;z-index:3;width:min(100%,500px);filter:drop-shadow(0 34px 30px rgba(2,30,84,.55))}
 .floaty{position:absolute;pointer-events:none;filter:drop-shadow(10px 16px 12px rgba(2,36,96,.42))}
-.floaty.ring{right:-24%;top:-9%;width:54%;z-index:1;transform:rotate(-14deg)}
-.floaty.ball{left:-17%;bottom:-8%;width:24%;z-index:4;transform:rotate(18deg)}
-.dolphin-card{position:relative;z-index:2;width:100%;background:linear-gradient(180deg,rgba(8,44,112,.86),rgba(6,30,84,.9));border-radius:var(--r-xl);padding:clamp(6.5rem,24%,8.5rem) clamp(1.4rem,3vw,2.25rem) clamp(1.4rem,3vw,2.25rem);display:grid;gap:.9rem;box-shadow:inset 0 0 0 1px rgba(255,255,255,.22),inset 0 1px 0 rgba(255,255,255,.35),0 30px 60px -20px rgba(2,24,70,.6)}
-.dolphin-card h3{font-size:clamp(1.462rem,2.6vw,1.892rem);color:#fff;letter-spacing:-.03em}
-.dolphin-card p{color:var(--on-blue-muted)}
-.dolphin-card .by{font-size:.98rem;color:var(--gold-on-blue);font-weight:600}
-.dolphin-card .row{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.4rem}
-@media (max-width:900px){ .pool-grid{grid-template-columns:1fr} .dolphin{max-width:520px;margin-inline:auto;width:100%;margin-top:2rem} .pool::before{background:linear-gradient(180deg,rgba(5,36,98,.95) 0%,rgba(7,56,132,.9) 48%,rgba(9,92,172,.45) 60%,rgba(10,110,190,0) 72%)} .floaty.ring{right:-14%} .floaty.ball{left:-4%;bottom:-6%;width:21%} }
+.floaty.ring{right:-22%;top:-12%;width:52%;z-index:1;transform:rotate(-14deg)}
+.floaty.ball{left:-12%;bottom:-4%;width:24%;z-index:4;transform:rotate(18deg)}
+@media (max-width:900px){ .pool-grid{grid-template-columns:1fr} .dolphin{max-width:440px;margin-inline:auto;width:100%;margin-top:1rem} .pool::before{background:linear-gradient(180deg,rgba(5,36,98,.95) 0%,rgba(7,56,132,.92) 52%,rgba(9,92,172,.45) 66%,rgba(10,110,190,0) 78%)} .floaty.ring{right:-10%} .floaty.ball{left:-2%;width:21%} }
+@media (max-width:480px){ .dr{grid-template-columns:minmax(0,1fr)} .dr .ctlw > *{width:100%} }
+
+/* Pool shop and servicing */
+.svc-sec{position:relative;isolation:isolate;overflow:clip}
+.svc-sec::before{content:"";position:absolute;z-index:-1;left:50%;top:-10%;translate:-50% 0;width:min(1100px,100vw);aspect-ratio:1.6;border-radius:50%;pointer-events:none;background:radial-gradient(closest-side,rgba(59,130,246,.3),transparent)}
+.sec-head.mid{margin-inline:auto;text-align:center;justify-items:center}
+.svc{list-style:none;margin:0 0 2.25rem;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
+.svc li{display:grid;align-content:start;gap:.5rem;text-align:center;padding:1.75rem 1.4rem;border-radius:var(--r-l);background:linear-gradient(180deg,var(--surface),var(--surface-2));box-shadow:var(--sh-1),var(--gloss)}
+.svc b{font-family:var(--display);font-weight:600;font-size:1.25rem;letter-spacing:-.02em;line-height:1.2;order:2}
+.svc .price{font-style:normal;font-family:var(--display);font-size:1.9rem;font-weight:700;color:var(--gold-on-blue);letter-spacing:-.03em;line-height:1;order:1}
+.svc li:not(:has(.price))::before{content:"";order:1;height:1.9rem;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffcb5c' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9.5'/%3E%3Cpath d='M7.5 12.5l3 3 6-6.5'/%3E%3C/svg%3E") center/1.9rem no-repeat}
+.svc span{color:var(--muted);font-size:1rem;order:3}
+@media (max-width:1000px){ .svc{grid-template-columns:repeat(2,minmax(0,1fr))} }
+@media (max-width:520px){ .svc{grid-template-columns:minmax(0,1fr)} }
 
 /* Trade */
 .trade-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(2rem,5vw,4.5rem);align-items:start}
@@ -584,7 +598,7 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
   body,.sec,.hero,.pool,.contact,.about,.ftr{background:#fff!important;color:#000!important;padding-block:1rem!important}
   .hero *,.pool *,.contact *,.steps *,.store-top *,.ftr *{color:#000!important}
   .hero{margin-top:0;padding-top:0}
-  .hstores,.dolphin-card,.store,.review,.cat,.results,.steps,.perks{box-shadow:none!important;border:1px solid #999!important;background:#fff!important}
+  .hstores,.store,.review,.cat,.results,.steps,.perks{box-shadow:none!important;border:1px solid #999!important;background:#fff!important}
   .ftr::after{content:"Northern Suppliers Pty Ltd. Mareeba (07) 4092 2392, 80-88 Byrnes Street. Atherton (07) 4091 7900, 33 Mabel Street. admin@northernsuppliers.net.au";display:block;margin-top:.5rem;font-size:11pt}
 }
 </style>
@@ -629,7 +643,6 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
             <label for="hq" class="sr">Search products</label>
             <input id="hq" type="search" placeholder="Search products, brands or SKU" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search" role="combobox" aria-expanded="false" aria-controls="suggest" aria-autocomplete="list">
-            <kbd aria-hidden="true">/</kbd>
             <button class="btn btn-gold" type="submit">Search</button>
           </div>
           <div class="suggest" id="suggest" hidden></div>
@@ -693,30 +706,38 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
     <div class="wrap pool-grid">
       <div>
         <div class="sec-head">
-          <h2>Everything for your pool, and someone to look after it.</h2>
-          <p class="lede">So the only thing left to do on a sunny Sunday is swim. Chemicals, equipment, testing and servicing, anywhere on the Atherton Tablelands.</p>
+          <p class="by">Dolphin by Maytronics</p>
+          <h2>Robots that clean the pool for you.</h2>
+          <p class="lede">Floor, walls and waterline, on their own. We stock the range, show you how they work and keep the parts.</p>
         </div>
-        <ul class="svc">
-          <li><b>Water testing</b><em class="price" style="font-style:normal">$9</em><span>Free when you buy any pool product. Bring a bottle of pool water.</span></li>
-          <li><b>Pool servicing</b><em class="price" style="font-style:normal">from $66</em><span>Regular visits, one-off cleans and green-pool recoveries.</span></li>
-          <li><b>Pumps, chlorinators and heaters</b><span>Supplied, fitted, repaired or replaced.</span></li>
-          <li><b>Chemicals and salt</b><span>Chlorine, acid, salt, algaecide and balancers, on the shelf.</span></li>
-        </ul>
-        <a class="btn btn-gold" href="#contact" data-topic="Pool servicing, clean or repair">Book a service or repair</a>
+        <div class="drange" id="drange" aria-label="Dolphin range"></div>
+        <div class="row">
+          <a class="btn btn-gold" href="#contact" data-topic="Dolphin pool cleaners">Ask which Dolphin suits your pool</a>
+        </div>
       </div>
       <div class="dolphin">
         <svg class="floaty ring" viewBox="0 0 220 220" aria-hidden="true"><defs><radialGradient id="rg" cx="35%" cy="30%" r="80%"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#7a4b00" stop-opacity=".28"/></radialGradient></defs><circle cx="110" cy="110" r="74" fill="none" stroke="#fffdf6" stroke-width="56"/><circle cx="110" cy="110" r="74" fill="none" stroke="#ffb81f" stroke-width="56" stroke-dasharray="29.06 29.06"/><circle cx="110" cy="110" r="74" fill="none" stroke="url(#rg)" stroke-width="56"/><path d="M52 92a62 62 0 0 1 40-42" fill="none" stroke="#fff" stroke-opacity=".75" stroke-width="7" stroke-linecap="round"/></svg>
         <svg class="floaty ball" viewBox="0 0 120 120" aria-hidden="true"><defs><radialGradient id="bg" cx="34%" cy="28%" r="85%"><stop offset="0" stop-color="#fff" stop-opacity=".6"/><stop offset=".4" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#03204f" stop-opacity=".35"/></radialGradient><clipPath id="bc"><circle cx="60" cy="60" r="56"/></clipPath></defs><g clip-path="url(#bc)"><path d="M46 44L112.6 40.8A56 56 0 0 1 102.9 96.0Z" fill="#ef4444"/><path d="M46 44L102.9 96.0A56 56 0 0 1 50.3 115.1Z" fill="#fffdf6"/><path d="M46 44L50.3 115.1A56 56 0 0 1 7.4 79.2Z" fill="#ffc531"/><path d="M46 44L7.4 79.2A56 56 0 0 1 17.1 24.0Z" fill="#fffdf6"/><path d="M46 44L17.1 24.0A56 56 0 0 1 69.7 4.9Z" fill="#2f7df6"/><path d="M46 44L69.7 4.9A56 56 0 0 1 112.6 40.8Z" fill="#fffdf6"/></g><circle cx="46" cy="44" r="7" fill="#fffdf6"/><circle cx="60" cy="60" r="56" fill="url(#bg)"/></svg>
-        <img class="dolphin-img" src="dolphin-520.webp" srcset="dolphin-520.webp 520w, dolphin.webp 778w" sizes="(max-width:900px) 80vw, 440px" alt="Dolphin M400 robotic pool cleaner" width="778" height="900" loading="lazy" decoding="async">
-        <div class="dolphin-card">
-          <p class="by">Dolphin by Maytronics</p>
-          <h3>Robots that clean the pool for you.</h3>
-          <p>Floor, walls and waterline, on their own. We stock the range, show you how they work and keep the parts.</p>
-          <div class="row">
-            <a class="btn btn-gold" href="#top-sellers" data-q="dolphin">See Dolphin models</a>
-            <a class="btn btn-glass" href="#top-sellers" data-open-cat="Pool">All pool products</a>
-          </div>
-        </div>
+        <img class="dolphin-img" src="dolphin-520.webp" srcset="dolphin-520.webp 520w, dolphin.webp 778w" sizes="(max-width:900px) 80vw, 500px" alt="Dolphin M400 robotic pool cleaner" width="778" height="900" loading="lazy" decoding="async">
+      </div>
+    </div>
+  </section>
+
+  <section id="pool-service" class="sec svc-sec">
+    <div class="wrap">
+      <div class="sec-head mid">
+        <h2>Pool shop and servicing.</h2>
+        <p class="lede">Anywhere on the Atherton Tablelands.</p>
+      </div>
+      <ul class="svc">
+        <li><b>Water testing</b><em class="price">$9</em><span>Free with any pool product. Bring a bottle of pool water.</span></li>
+        <li><b>Pool servicing</b><em class="price">from $66</em><span>Regular visits, one-off cleans and green-pool recoveries.</span></li>
+        <li><b>Pumps, chlorinators and heaters</b><span>Supplied, fitted, repaired or replaced.</span></li>
+        <li><b>Chemicals and salt</b><span>Chlorine, acid, salt and balancers, on the shelf.</span></li>
+      </ul>
+      <div class="row mid">
+        <a class="btn btn-gold" href="#contact" data-topic="Pool servicing, clean or repair">Book a service or repair</a>
+        <a class="btn btn-quiet" href="#top-sellers" data-open-cat="Pool">All pool products</a>
       </div>
     </div>
   </section>
@@ -984,7 +1005,8 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
         <h3>On this page</h3>
         <ul>
           <li><a href="#top-sellers">Products</a></li>
-          <li><a href="#pool">Pool shop and servicing</a></li>
+          <li><a href="#pool">Dolphin pool cleaners</a></li>
+          <li><a href="#pool-service">Pool shop and servicing</a></li>
           <li><a href="#trade">Trade accounts</a></li>
           <li><a href="#stores">Stores and hours</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -993,7 +1015,7 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
     </div>
     <p class="wordmark" aria-hidden="true">Northern Suppliers</p>
     <div class="ftr-base">
-      <p>&copy; <span id="year">2026</span> Northern Suppliers Pty Ltd. Mareeba and Atherton, Queensland. <span class="stamp">Site updated 16 Nov 2026, 2:30 pm</span></p>
+      <p>&copy; <span id="year">2026</span> Northern Suppliers Pty Ltd. Mareeba and Atherton, Queensland. <span class="stamp">Site updated 16 Nov 2026, 2:38 pm</span></p>
       <details class="privacy" id="privacy">
         <summary>Privacy</summary>
         <p>When you send an enquiry, we get what you typed (name, phone, email, message, any attachment) and use it only to reply. We keep it with our normal business records. We never sell or share it, and we don't add you to a mailing list.</p>
@@ -1440,6 +1462,16 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
     var spy=new IntersectionObserver(function(en){ en.forEach(function(x){ var a=navA[x.target.id]; if(!a) return; if(x.isIntersecting){ each('#navlinks a',function(o){ o.removeAttribute('aria-current'); }); a.setAttribute('aria-current','true'); } else if(a.getAttribute('aria-current')) a.removeAttribute('aria-current'); }); },{rootMargin:'-45% 0px -50% 0px'});
     Object.keys(navA).forEach(function(id){ var s=$(id); if(s) spy.observe(s); });
   }
+
+  /* Dolphin range: every Dolphin product in the catalogue, cleaners first */
+  (function(){
+    var el=$('drange'); if(!el) return;
+    var ids=[]; PRODUCTS.forEach(function(p,i){ if(/dolphin/i.test(p.brand)) ids.push(i); });
+    ids.sort(function(a,b){ return (/cleaner/i.test(PRODUCTS[b].name)?1:0)-(/cleaner/i.test(PRODUCTS[a].name)?1:0)||a-b; });
+    el.innerHTML=ids.map(function(i){ var p=PRODUCTS[i];
+      return '<div class="dr"><button type="button" class="dr-open" data-qv="'+i+'" aria-label="View '+esc(p.name)+'">'+(p.img?'<img src="'+esc(p.img)+'" alt="" loading="lazy" decoding="async" width="64" height="64">':'<span></span>')+'<span><b>'+esc(p.name)+'</b><span>'+esc(p.desc)+'</span></span></button>'+ctlw(i)+'</div>';
+    }).join('');
+  })();
 
   renderCats(); render(); renderList();
   $('year').textContent=String(new Date().getFullYear());
