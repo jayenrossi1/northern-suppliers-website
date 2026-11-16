@@ -149,12 +149,8 @@ a,button,summary,input,select,label{touch-action:manipulation}
 .hero-banner{display:block;flex:none;height:var(--bh);width:calc(var(--bh)*3);max-width:none;-webkit-mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent);mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent)}
 .hero-band{overflow-x:clip}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1fr);justify-items:center;gap:clamp(1.75rem,3vw,2.5rem);padding-block:clamp(1.5rem,3vw,2.5rem) clamp(3rem,6vw,5rem);text-align:center}
-.hero-copy{display:grid;grid-template-columns:minmax(0,1fr);justify-items:center;gap:1.5rem;min-width:0;width:100%}
+.hero-copy{display:grid;grid-template-columns:minmax(0,1fr);justify-items:center;gap:1.75rem;min-width:0;width:100%}
 .hero h1{font-size:clamp(2.1rem,4.6vw,3.7rem);line-height:1.06;letter-spacing:-.035em;text-shadow:0 2px 30px rgba(7,23,53,.35)}
-.hero-cats{font-size:clamp(1.05rem,1.5vw,1.25rem);line-height:1.7;color:var(--on-blue-muted);max-width:52rem;margin-top:-.5rem}
-.hero-cats a{color:#fff;font-weight:500;text-decoration:underline;text-decoration-color:rgba(255,203,92,.7);text-decoration-thickness:2px;text-underline-offset:.22em;white-space:nowrap}
-.hero-cats a:hover{color:var(--gold-on-blue)}
-.hero .lede{color:var(--on-blue-muted);font-size:1.1rem;max-width:60ch}
 .hsearch{position:relative;z-index:5;width:100%;max-width:760px;text-align:left}
 .hsearch-field{display:flex;align-items:center;gap:.6rem;background:#fff;border-radius:26px;padding:.6rem .6rem .6rem 1.5rem;min-height:88px;box-shadow:inset 0 1px 0 #fff,0 0 0 5px rgba(255,203,92,.32),0 2px 4px rgba(3,12,32,.2),0 34px 70px -14px rgba(3,12,32,.7);transition:box-shadow .12s}
 .hsearch-field:focus-within{box-shadow:inset 0 1px 0 #fff,0 0 0 5px rgba(255,203,92,.95),0 34px 70px -14px rgba(3,12,32,.7)}
@@ -182,7 +178,6 @@ a,button,summary,input,select,label{touch-action:manipulation}
 .sg-none b{color:#0a1b3d}
 .suggest mark,.prow mark{background:#ffe3a1;color:#1b1300;border-radius:3px;padding:0 .08em}
 .quick{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;justify-content:center}
-.quick-label{font-size:.98rem;color:var(--on-blue-muted);margin-right:.35rem}
 .quick a{text-decoration:none;color:#fff;border-radius:999px;padding:.5rem 1.05rem;font-size:.98rem;font-weight:500;min-height:44px;display:inline-flex;align-items:center;background:rgba(255,255,255,.1);box-shadow:inset 0 0 0 1px rgba(255,255,255,.28);transition:background .12s,transform .12s var(--ease)}
 .quick a:hover{background:rgba(255,255,255,.22);transform:translateY(-1px)}
 
@@ -629,7 +624,6 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <h1>Hospitality store and pool shop.</h1>
-        <p class="hero-cats">Plus <a href="#top-sellers" data-open-cat="Cleaning">cleaning</a>, <a href="#top-sellers" data-open-cat="Chemicals">chemicals</a>, <a href="#top-sellers" data-open-cat="Washroom &amp; hygiene">washroom</a>, <a href="#top-sellers" data-open-cat="Catering &amp; packaging">catering and packaging</a>, <a href="#top-sellers" data-open-cat="Jars, bottles &amp; caps">jars and bottles</a>, <a href="#top-sellers" data-open-cat="Bags &amp; paper">bags and paper</a>, <a href="#top-sellers" data-open-cat="Kitchen &amp; knives">kitchen and knives</a>, <a href="#top-sellers" data-open-cat="Food &amp; beverage">food and beverage</a> and <a href="#top-sellers" data-open-cat="Matting &amp; storage">matting and storage</a>.</p>
         <form class="hsearch" id="hsearch" role="search" autocomplete="off">
           <div class="hsearch-field">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
@@ -640,15 +634,13 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
           </div>
           <div class="suggest" id="suggest" hidden></div>
         </form>
-        <div class="quick">
-          <span class="quick-label">Popular</span>
+        <div class="quick" role="group" aria-label="Popular searches">
           <a href="#top-sellers" data-open-cat="Pool">Pool</a>
           <a href="#top-sellers" data-q="toilet paper">Toilet paper</a>
           <a href="#top-sellers" data-q="biocup">Coffee cups</a>
           <a href="#top-sellers" data-q="chlorine">Chlorine</a>
           <a href="#top-sellers" data-q="dolphin">Dolphin</a>
         </div>
-        <p class="lede">Over 6,000 products on the shelf at our family-owned stores in Mareeba and Atherton, for the whole Tablelands. Build an order list and collect.</p>
       </div>
       <aside class="hstores" aria-label="Our stores">
         <div class="hstore">
@@ -1001,7 +993,7 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
     </div>
     <p class="wordmark" aria-hidden="true">Northern Suppliers</p>
     <div class="ftr-base">
-      <p>&copy; <span id="year">2026</span> Northern Suppliers Pty Ltd. Mareeba and Atherton, Queensland. <span class="stamp">Site updated 16 Nov 2026, 1:56 pm</span></p>
+      <p>&copy; <span id="year">2026</span> Northern Suppliers Pty Ltd. Mareeba and Atherton, Queensland. <span class="stamp">Site updated 16 Nov 2026, 1:58 pm</span></p>
       <details class="privacy" id="privacy">
         <summary>Privacy</summary>
         <p>When you send an enquiry, we get what you typed (name, phone, email, message, any attachment) and use it only to reply. We keep it with our normal business records. We never sell or share it, and we don't add you to a mailing list.</p>
