@@ -17,7 +17,7 @@
 <meta property="og:image:alt" content="Northern Suppliers logo with the words Chemicals, cleaning, kitchenware and pool supplies. Mareeba and Atherton.">
 <meta property="og:locale" content="en_AU">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#071735">
+<meta name="theme-color" content="#1a79c3">
 <meta name="color-scheme" content="dark">
 <meta name="application-name" content="Northern Suppliers">
 <meta name="apple-mobile-web-app-title" content="Northern Suppliers">
@@ -28,8 +28,9 @@
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="preload" as="image" type="image/webp" href="water.webp" fetchpriority="high">
-<link rel="preload" as="image" type="image/webp" href="banner.webp" fetchpriority="high">
+<link rel="preload" as="image" type="image/webp" href="banner-logo.webp" fetchpriority="high">
+<link rel="preload" as="image" type="image/webp" href="water-hero-1920.webp" imagesrcset="water-hero-1920.webp 1x, water-hero-3840.webp 2x" media="(min-width:701px)">
+<link rel="preload" as="image" type="image/webp" href="water-hero-m.webp" media="(max-width:700px)">
 <link rel="preload" as="font" type="font/woff2" href="fonts/poppins-400.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="fonts/poppins-600.woff2" crossorigin>
 <style>
@@ -64,7 +65,7 @@
 html{overflow-anchor:none;scrollbar-gutter:stable;scroll-padding-top:calc(var(--hh) + 12px);-webkit-text-size-adjust:100%}
 html.lock{overflow:hidden}
 @media (prefers-reduced-motion:reduce){ *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important} }
-body{margin:0;background:var(--bg) linear-gradient(180deg,#0a2150 0%,#081b42 30%,#07173a 100%);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--bg) linear-gradient(180deg,#0c2b68 0%,#0a2152 24%,#07173a 100%);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--navy)}
 img,svg{max-width:100%;display:block}
 img{height:auto}
@@ -106,13 +107,13 @@ a,button,summary,input,select,label{touch-action:manipulation}
 .nav{position:relative;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;height:100%}
 .brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;flex:none;min-height:44px}
 .brand img{width:44px;height:44px;border-radius:50%;box-shadow:0 0 0 1px rgba(255,255,255,.25),0 4px 14px rgba(0,0,0,.35)}
-.brand-name{font-family:var(--display);font-weight:600;font-size:1.161rem;letter-spacing:-.03em;line-height:1;white-space:nowrap}
+.brand-name{text-shadow:0 1px 3px rgba(4,30,84,.45);font-family:var(--display);font-weight:600;font-size:1.161rem;letter-spacing:-.03em;line-height:1;white-space:nowrap}
 .nav-links{display:flex;gap:.15rem;list-style:none;margin:0;padding:0}
-.nav-links a{text-decoration:none;font-weight:500;font-size:1rem;color:#f1f6ff;padding:.6rem .95rem;border-radius:999px;display:inline-flex;min-height:44px;align-items:center;white-space:nowrap;transition:background .12s,color .12s}
+.nav-links a{text-shadow:0 1px 3px rgba(4,30,84,.45);text-decoration:none;font-weight:500;font-size:1rem;color:#fff;padding:.6rem .95rem;border-radius:999px;display:inline-flex;min-height:44px;align-items:center;white-space:nowrap;transition:background .12s,color .12s}
 .nav-links a:hover{color:#fff;background:rgba(255,255,255,.12)}
 .nav-links a[aria-current="true"]{color:#fff;background:rgba(255,255,255,.14);box-shadow:inset 0 0 0 1px rgba(255,255,255,.18)}
 .nav-cta{display:flex;align-items:center;gap:.6rem;flex:none}
-.order-btn{display:inline-flex;align-items:center;gap:.55rem;min-height:46px;padding:0 .5rem 0 1rem;border-radius:999px;border:0;background:rgba(255,255,255,.12);color:#fff;font-weight:600;font-size:.98rem;box-shadow:inset 0 0 0 1px rgba(255,255,255,.28),inset 0 1px 0 rgba(255,255,255,.25);transition:background .12s,color .12s,box-shadow .12s,transform .12s var(--ease)}
+.order-btn{display:inline-flex;align-items:center;gap:.55rem;min-height:46px;padding:0 .5rem 0 1rem;border-radius:999px;border:0;background:rgba(6,40,110,.42);color:#fff;font-weight:600;font-size:.98rem;box-shadow:inset 0 0 0 1px rgba(255,255,255,.28),inset 0 1px 0 rgba(255,255,255,.25);transition:background .12s,color .12s,box-shadow .12s,transform .12s var(--ease)}
 .order-btn:hover{background:rgba(255,255,255,.2);transform:translateY(-1px)}
 .order-btn svg{width:20px;height:20px;flex:none}
 .order-btn .n{min-width:30px;height:30px;padding:0 .45rem;border-radius:999px;display:grid;place-items:center;font-size:.9rem;font-variant-numeric:tabular-nums;background:rgba(255,255,255,.16);color:#fff}
@@ -122,7 +123,7 @@ a,button,summary,input,select,label{touch-action:manipulation}
 .hsbtn svg{width:19px;height:19px;color:#1d57b0}
 .hdr.past .hsbtn{display:inline-flex}
 @media (max-width:1240px){ .hsbtn span{display:none} .hsbtn{width:46px;padding:0;justify-content:center} }
-.menu-btn{display:none;background:rgba(255,255,255,.12);border:0;color:#fff;width:46px;height:46px;place-items:center;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(255,255,255,.28)}
+.menu-btn{display:none;background:rgba(6,40,110,.42);border:0;color:#fff;width:46px;height:46px;place-items:center;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(255,255,255,.28)}
 .menu-btn svg{width:22px;height:22px}
 .menu-btn .l{transition:transform .12s var(--ease),opacity .12s;transform-origin:12px 12px}
 .menu-btn[aria-expanded="true"] .l1{transform:translateY(5px) rotate(45deg)}
@@ -140,17 +141,16 @@ a,button,summary,input,select,label{touch-action:manipulation}
 @media (max-width:400px){ .hsearch input{font-size:.98rem;padding:0 .2rem} .cb b{font-size:.9rem;white-space:nowrap} .cb{padding:.5rem .7rem;gap:0 .45rem} .brand-name{white-space:normal;font-size:1.05rem;line-height:.95;max-width:5.6em} }
 
 /* Hero */
-.hero{--bh:clamp(190px,23vw,330px);position:relative;z-index:2;isolation:isolate;margin-top:calc(-1*var(--hh));color:#fff;background:#0d2a5c url(water.webp) center/cover no-repeat}
+.hero{--bh:clamp(190px,23vw,330px);position:relative;z-index:2;isolation:isolate;margin-top:calc(-1*var(--hh));color:#fff;background:#1672c4 url(water-hero-1920.webp) center top/cover no-repeat;background-image:image-set(url(water-hero-1920.webp) 1x,url(water-hero-3840.webp) 2x)}
+@media (max-width:700px){ .hero{background-image:url(water-hero-m.webp)} }
 .hero.raise{z-index:6}
-.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(7,23,53,.2) 0%,rgba(7,23,53,.1) 60%,rgba(7,23,53,.5) 100%);pointer-events:none}
-/* The wide logo banner sits across the top; its own blue runs edge to edge and melts into the water below */
-.hero-band{position:relative;padding-top:var(--hh);display:flex;justify-content:center;background:linear-gradient(180deg,#1c71b1 0,#1c71b1 var(--hh),#185b98 calc(var(--hh) + var(--bh)*.25),#164982 calc(var(--hh) + var(--bh)*.5),#173c72 calc(var(--hh) + var(--bh)*.75),#1b376c calc(var(--hh) + var(--bh)))}
-.hero-band::after{content:"";position:absolute;left:0;right:0;top:100%;height:260px;z-index:-1;background:linear-gradient(180deg,#1b376c,rgba(27,55,108,0));pointer-events:none}
-.hero-banner{display:block;flex:none;height:var(--bh);width:calc(var(--bh)*3);max-width:none;-webkit-mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent);mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent)}
-.hero-band{overflow-x:clip}
+/* the pool fades into the deep blue of the page at the bottom edge */
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(12,43,104,0) 0%,rgba(12,43,104,0) 55%,rgba(12,43,104,.45) 74%,rgba(12,43,104,.85) 88%,#0c2b68 97%);pointer-events:none}
+.hero-band{padding-top:calc(var(--hh) + .5rem);display:flex;justify-content:center}
+.hero-banner{display:block;flex:none;width:min(calc(var(--bh)*1.727),90vw);height:auto;filter:drop-shadow(0 18px 26px rgba(4,30,84,.35))}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1fr);justify-items:center;gap:clamp(1.75rem,3vw,2.5rem);padding-block:clamp(1.5rem,3vw,2.5rem) clamp(3rem,6vw,5rem);text-align:center}
 .hero-copy{display:grid;grid-template-columns:minmax(0,1fr);justify-items:center;gap:1.75rem;min-width:0;width:100%}
-.hero h1{font-size:clamp(2.1rem,4.6vw,3.7rem);line-height:1.06;letter-spacing:-.035em;text-shadow:0 2px 30px rgba(7,23,53,.35)}
+.hero h1{font-size:clamp(2.1rem,4.6vw,3.7rem);line-height:1.06;letter-spacing:-.035em;text-shadow:0 2px 4px rgba(4,30,84,.35),0 6px 34px rgba(4,30,84,.45)}
 .hsearch{position:relative;z-index:5;width:100%;max-width:760px;text-align:left}
 .hsearch-field{display:flex;align-items:center;gap:.6rem;background:#fff;border-radius:26px;padding:.6rem .6rem .6rem 1.5rem;min-height:88px;box-shadow:inset 0 1px 0 #fff,0 0 0 5px rgba(255,203,92,.32),0 2px 4px rgba(3,12,32,.2),0 34px 70px -14px rgba(3,12,32,.7);transition:box-shadow .12s}
 .hsearch-field:focus-within{box-shadow:inset 0 1px 0 #fff,0 0 0 5px rgba(255,203,92,.95),0 34px 70px -14px rgba(3,12,32,.7)}
@@ -178,10 +178,10 @@ a,button,summary,input,select,label{touch-action:manipulation}
 .sg-none b{color:#0a1b3d}
 .suggest mark,.prow mark{background:#ffe3a1;color:#1b1300;border-radius:3px;padding:0 .08em}
 .quick{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;justify-content:center}
-.quick a{text-decoration:none;color:#fff;border-radius:999px;padding:.5rem 1.05rem;font-size:.98rem;font-weight:500;min-height:44px;display:inline-flex;align-items:center;background:rgba(255,255,255,.1);box-shadow:inset 0 0 0 1px rgba(255,255,255,.28);transition:background .12s,transform .12s var(--ease)}
-.quick a:hover{background:rgba(255,255,255,.22);transform:translateY(-1px)}
+.quick a{text-decoration:none;color:#fff;border-radius:999px;padding:.5rem 1.05rem;font-size:.98rem;font-weight:500;min-height:44px;display:inline-flex;align-items:center;background:rgba(6,40,110,.42);box-shadow:inset 0 0 0 1px rgba(255,255,255,.4);transition:background .12s,transform .12s var(--ease)}
+.quick a:hover{background:rgba(6,40,110,.7);transform:translateY(-1px)}
 
-.hstores{position:relative;z-index:1;width:100%;max-width:880px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:linear-gradient(180deg,rgba(40,98,196,.9),rgba(18,57,127,.92));border-radius:var(--r-l);padding:.4rem;box-shadow:inset 0 0 0 1px rgba(255,255,255,.22),inset 0 1px 0 rgba(255,255,255,.35),var(--sh-3)}
+.hstores{position:relative;z-index:1;width:100%;max-width:880px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:linear-gradient(180deg,rgba(18,74,170,.92),rgba(11,46,118,.95));border-radius:var(--r-l);padding:.4rem;box-shadow:inset 0 0 0 1px rgba(255,255,255,.22),inset 0 1px 0 rgba(255,255,255,.35),var(--sh-3)}
 .hstore{padding:1.25rem 1.25rem 1.15rem;display:grid;gap:.55rem;justify-items:center;text-align:center}
 .hstore + .hstore{border-left:1px solid rgba(255,255,255,.16)}
 .hstore-name{font-family:var(--display);font-weight:600;font-size:1.505rem;letter-spacing:-.03em;line-height:1}
@@ -620,7 +620,7 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
 
 <main id="main">
   <section class="hero" id="hero">
-    <div class="hero-band"><img class="hero-banner" src="banner.webp" alt="Northern Suppliers" width="1500" height="500" fetchpriority="high"></div>
+    <div class="hero-band"><img class="hero-banner" src="banner-logo.webp" alt="Northern Suppliers" width="791" height="458" fetchpriority="high"></div>
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <h1>Hospitality store and pool shop.</h1>
@@ -993,7 +993,7 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
     </div>
     <p class="wordmark" aria-hidden="true">Northern Suppliers</p>
     <div class="ftr-base">
-      <p>&copy; <span id="year">2026</span> Northern Suppliers Pty Ltd. Mareeba and Atherton, Queensland. <span class="stamp">Site updated 16 Nov 2026, 1:58 pm</span></p>
+      <p>&copy; <span id="year">2026</span> Northern Suppliers Pty Ltd. Mareeba and Atherton, Queensland. <span class="stamp">Site updated 16 Nov 2026, 2:04 pm</span></p>
       <details class="privacy" id="privacy">
         <summary>Privacy</summary>
         <p>When you send an enquiry, we get what you typed (name, phone, email, message, any attachment) and use it only to reply. We keep it with our normal business records. We never sell or share it, and we don't add you to a mailing list.</p>
