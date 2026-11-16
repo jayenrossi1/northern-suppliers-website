@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Northern Suppliers | Pool, Cleaning &amp; Catering Supplies, Mareeba &amp; Atherton</title>
+<title>Northern Suppliers | Hospitality Store &amp; Pool Shop, Mareeba &amp; Atherton</title>
 <style>[hidden]{display:none!important}</style>
-<meta name="description" content="Northern Suppliers, Mareeba and Atherton. Pool supplies and servicing, chemicals, cleaning, washroom and catering supplies. Family-owned, 6,000+ products, trade accounts, click and collect.">
+<meta name="description" content="Northern Suppliers, Mareeba and Atherton. Hospitality store and pool shop: pool supplies and servicing, chemicals, cleaning, washroom and catering supplies. Family-owned, 6,000+ products, trade accounts, click and collect.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Northern Suppliers">
 <meta property="og:url" content="https://northernsuppliers.net.au/">
 <meta property="og:title" content="Northern Suppliers | Mareeba &amp; Atherton">
-<meta property="og:description" content="Pool, chemicals, cleaning, washroom and catering supplies for the Atherton Tablelands. Family-owned, 6,000+ products, click and collect.">
+<meta property="og:description" content="Hospitality store and pool shop for the Atherton Tablelands. Pool, chemicals, cleaning, washroom and catering supplies. Family-owned, 6,000+ products, click and collect.">
 <meta property="og:image" content="https://northernsuppliers.net.au/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -29,6 +29,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="preload" as="image" type="image/webp" href="water.webp" fetchpriority="high">
+<link rel="preload" as="image" type="image/webp" href="logo.webp" imagesrcset="logo.webp 640w, logo-960.webp 960w" imagesizes="(max-width:980px) 220px, 430px">
 <link rel="preload" as="font" type="font/woff2" href="fonts/poppins-400.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="fonts/poppins-600.woff2" crossorigin>
 <style>
@@ -145,6 +146,9 @@ a,button,summary,input,select,label{touch-action:manipulation}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(310px,.75fr);gap:clamp(2rem,5vw,4.5rem);align-items:end;padding-block:clamp(2.75rem,7vw,5.75rem) clamp(3.25rem,7vw,5.75rem)}
 .hero-copy{display:grid;grid-template-columns:minmax(0,1fr);gap:1.6rem;min-width:0}
 .hero h1{font-size:clamp(2.15rem,4.7vw,4rem);line-height:1.06;letter-spacing:-.035em;max-width:18ch;text-shadow:0 2px 30px rgba(7,23,53,.35)}
+.hero-cats{font-size:clamp(1.05rem,1.5vw,1.25rem);line-height:1.7;color:var(--on-blue-muted);max-width:46rem;margin-top:-.5rem}
+.hero-cats a{color:#fff;font-weight:500;text-decoration:underline;text-decoration-color:rgba(255,203,92,.7);text-decoration-thickness:2px;text-underline-offset:.22em;white-space:nowrap}
+.hero-cats a:hover{color:var(--gold-on-blue)}
 .hero .lede{color:var(--on-blue-muted);font-size:1.1rem;max-width:52ch}
 .hsearch{position:relative;z-index:5;max-width:760px}
 .hsearch-field{display:flex;align-items:center;gap:.6rem;background:#fff;border-radius:26px;padding:.6rem .6rem .6rem 1.5rem;min-height:88px;box-shadow:inset 0 1px 0 #fff,0 0 0 5px rgba(255,203,92,.32),0 2px 4px rgba(3,12,32,.2),0 34px 70px -14px rgba(3,12,32,.7);transition:box-shadow .12s}
@@ -177,7 +181,9 @@ a,button,summary,input,select,label{touch-action:manipulation}
 .quick a{text-decoration:none;color:#fff;border-radius:999px;padding:.5rem 1.05rem;font-size:.98rem;font-weight:500;min-height:44px;display:inline-flex;align-items:center;background:rgba(255,255,255,.1);box-shadow:inset 0 0 0 1px rgba(255,255,255,.28);transition:background .12s,transform .12s var(--ease)}
 .quick a:hover{background:rgba(255,255,255,.22);transform:translateY(-1px)}
 
-.hstores{align-self:end;background:linear-gradient(180deg,rgba(40,98,196,.72),rgba(18,57,127,.72));border-radius:var(--r-l);padding:.4rem;box-shadow:inset 0 0 0 1px rgba(255,255,255,.22),inset 0 1px 0 rgba(255,255,255,.35),var(--sh-3);}
+.hero-side{display:grid;justify-items:center;align-self:center;min-width:0}
+.hero-logo{position:relative;z-index:0;width:min(100%,430px);height:auto;border-radius:50%;margin-bottom:-16%;box-shadow:0 0 0 10px rgba(255,255,255,.07),0 0 0 22px rgba(255,255,255,.04),0 40px 90px rgba(2,10,32,.6)}
+.hstores{position:relative;z-index:1;width:100%;background:linear-gradient(180deg,rgba(40,98,196,.9),rgba(18,57,127,.92));border-radius:var(--r-l);padding:.4rem;box-shadow:inset 0 0 0 1px rgba(255,255,255,.22),inset 0 1px 0 rgba(255,255,255,.35),var(--sh-3);}
 .hstore{padding:1.15rem 1.25rem 1.05rem;display:grid;gap:.5rem}
 .hstore + .hstore{border-top:1px solid rgba(255,255,255,.16)}
 .hstore-name{font-family:var(--display);font-weight:600;font-size:1.505rem;letter-spacing:-.03em;line-height:1}
@@ -195,6 +201,7 @@ a,button,summary,input,select,label{touch-action:manipulation}
 @media (max-width:980px){
   .hero-grid{grid-template-columns:minmax(0,1fr);align-items:start;padding-block:2.25rem 2.75rem}
   .hstores{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .hero-logo{width:220px;margin-bottom:-36px}
   .hstore + .hstore{border-top:0;border-left:1px solid rgba(255,255,255,.16)}
   .notice{grid-column:1/-1}
 }
@@ -624,7 +631,8 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
   <section class="hero" id="hero">
     <div class="wrap hero-grid">
       <div class="hero-copy">
-        <h1>Pool, cleaning and catering supplies for the Tablelands.</h1>
+        <h1>Hospitality store and pool shop.</h1>
+        <p class="hero-cats">Plus <a href="#top-sellers" data-open-cat="Cleaning">cleaning</a>, <a href="#top-sellers" data-open-cat="Chemicals">chemicals</a>, <a href="#top-sellers" data-open-cat="Washroom &amp; hygiene">washroom</a>, <a href="#top-sellers" data-open-cat="Catering &amp; packaging">catering and packaging</a>, <a href="#top-sellers" data-open-cat="Jars, bottles &amp; caps">jars and bottles</a>, <a href="#top-sellers" data-open-cat="Bags &amp; paper">bags and paper</a>, <a href="#top-sellers" data-open-cat="Kitchen &amp; knives">kitchen and knives</a>, <a href="#top-sellers" data-open-cat="Food &amp; beverage">food and beverage</a> and <a href="#top-sellers" data-open-cat="Matting &amp; storage">matting and storage</a>.</p>
         <form class="hsearch" id="hsearch" role="search" autocomplete="off">
           <div class="hsearch-field">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
@@ -643,8 +651,10 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
           <a href="#top-sellers" data-q="chlorine">Chlorine</a>
           <a href="#top-sellers" data-q="dolphin">Dolphin</a>
         </div>
-        <p class="lede">Over 6,000 products on the shelf at our family-owned stores in Mareeba and Atherton. Build an order list and collect.</p>
+        <p class="lede">Over 6,000 products on the shelf at our family-owned stores in Mareeba and Atherton, for the whole Tablelands. Build an order list and collect.</p>
       </div>
+      <div class="hero-side">
+      <img class="hero-logo" src="logo.webp" srcset="logo.webp 640w, logo-960.webp 960w" sizes="(max-width:980px) 220px, 430px" alt="Northern Suppliers logo: a gold map of Queensland on a blue globe" width="640" height="640" fetchpriority="high">
       <aside class="hstores" aria-label="Our stores">
         <div class="hstore">
           <p class="hstore-name">Mareeba</p>
@@ -664,6 +674,7 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
         </div>
         <p class="notice" id="notice" hidden></p>
       </aside>
+      </div>
     </div>
   </section>
 
@@ -965,7 +976,7 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
     <div class="ftr-top">
       <div class="ftr-brand">
         <img src="logo-160.webp" alt="" width="72" height="72" loading="lazy" decoding="async">
-        <p>Family-owned on the Atherton Tablelands. Pool, cleaning, washroom and catering supplies.</p>
+        <p>Hospitality store and pool shop, family-owned on the Atherton Tablelands.</p>
       </div>
       <div>
         <h3>Mareeba</h3>
@@ -996,7 +1007,7 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
     </div>
     <p class="wordmark" aria-hidden="true">Northern Suppliers</p>
     <div class="ftr-base">
-      <p>&copy; <span id="year">2026</span> Northern Suppliers Pty Ltd. Mareeba and Atherton, Queensland. <span class="stamp">Site updated 16 Nov 2026, 1:10 pm</span></p>
+      <p>&copy; <span id="year">2026</span> Northern Suppliers Pty Ltd. Mareeba and Atherton, Queensland. <span class="stamp">Site updated 16 Nov 2026, 1:14 pm</span></p>
       <details class="privacy" id="privacy">
         <summary>Privacy</summary>
         <p>When you send an enquiry, we get what you typed (name, phone, email, message, any attachment) and use it only to reply. We keep it with our normal business records. We never sell or share it, and we don't add you to a mailing list.</p>
