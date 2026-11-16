@@ -233,21 +233,25 @@ a,button,summary,input,select,label{touch-action:manipulation}
 .cat{all:unset;box-sizing:border-box;cursor:pointer;position:relative;overflow:hidden;border-radius:var(--r-l);transition:transform .12s var(--ease),box-shadow .12s var(--ease)}
 .cat:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .cat:hover{transform:translateY(-5px)}
-.cat.feat{grid-column:span 6;min-height:272px;background:var(--tile);color:var(--tile-ink);padding:1.75rem 1.9rem;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.95fr);gap:1rem;box-shadow:var(--sh-1),inset 0 1px 0 #fff}
-.cat.feat:hover{box-shadow:var(--sh-2),inset 0 1px 0 #fff}
-.cat.feat::before{content:"";position:absolute;inset:0;background:radial-gradient(70% 90% at 100% 100%,rgba(47,111,208,.13),transparent 65%);pointer-events:none}
+.cat.feat{grid-column:span 6;min-height:272px;color:#fff;padding:1.75rem 1.9rem;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.95fr);gap:1rem;background:linear-gradient(140deg,var(--c1),var(--c2));box-shadow:var(--sh-1),inset 0 1px 0 rgba(255,255,255,.3),inset 0 0 0 1px rgba(255,255,255,.12)}
+.cat.feat:hover{box-shadow:var(--sh-2),inset 0 1px 0 rgba(255,255,255,.3),inset 0 0 0 1px rgba(255,255,255,.2)}
+.cat.feat::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 85% at 78% 55%,rgba(255,255,255,.3),transparent 70%);pointer-events:none}
+.cat.feat:nth-child(1){--c1:#1697dd;--c2:#0b4fa8}
+.cat.feat:nth-child(2){--c1:#3a6fe6;--c2:#1b338f}
+.cat.feat:nth-child(3){--c1:#13a3c4;--c2:#0b5796}
+.cat.feat:nth-child(4){--c1:#4c63e0;--c2:#232a8c}
 .cat-txt{position:relative;display:grid;align-content:space-between;gap:1rem;min-width:0}
 .cat-txt b{font-family:var(--display);font-weight:600;font-size:clamp(1.548rem,2.8vw,2.15rem);letter-spacing:-.03em;line-height:1;display:block}
-.cat-txt em{font-style:normal;display:block;font-size:1rem;line-height:1.4;color:var(--tile-muted);margin-top:.6rem}
-.cat-go{display:inline-flex;align-items:center;gap:.6rem;font-weight:600;font-size:.98rem;color:#174a96}
-.cat-go i{width:40px;height:40px;border-radius:50%;background:#0d2a5c;color:#fff;display:grid;place-items:center;transition:transform .12s var(--ease),background .12s}
+.cat-txt em{font-style:normal;display:block;font-size:1rem;line-height:1.4;color:rgba(255,255,255,.88);margin-top:.6rem}
+.cat-go{display:inline-flex;align-items:center;gap:.6rem;font-weight:600;font-size:.98rem;color:#fff}
+.cat-go i{width:40px;height:40px;border-radius:50%;background:linear-gradient(180deg,var(--gold-hi),var(--gold));color:#1b1300;display:grid;place-items:center;transition:transform .12s var(--ease);box-shadow:inset 0 1px 0 rgba(255,255,255,.7)}
 .cat-go svg{width:18px;height:18px}
-.cat:hover .cat-go i{transform:translateX(4px);background:var(--gold);color:#1b1300}
+.cat:hover .cat-go i{transform:translateX(4px)}
 .fan{position:relative;aspect-ratio:1.08;width:100%;align-self:center;max-width:290px;justify-self:end}
-.fan img{position:absolute;width:62%;aspect-ratio:1;object-fit:contain;mix-blend-mode:multiply;transition:transform .12s var(--ease)}
-.fan img:nth-child(1){left:-4%;top:50%;margin-top:-39%;width:78%;z-index:2}
-.fan img:nth-child(2){right:-7%;top:-4%;width:44%;transform:rotate(6deg)}
-.fan img:nth-child(3){right:-7%;bottom:-4%;width:44%;z-index:3;transform:rotate(-4deg)}
+.fan img{position:absolute;object-fit:contain;filter:drop-shadow(0 12px 12px rgba(2,14,48,.45));transition:transform .12s var(--ease)}
+.fan img:nth-child(1){left:-4%;top:8%;width:74%;height:84%;z-index:2}
+.fan img:nth-child(2){right:-6%;top:-2%;width:42%;height:46%;transform:rotate(6deg)}
+.fan img:nth-child(3){right:-6%;bottom:-2%;width:42%;height:46%;z-index:3;transform:rotate(-4deg)}
 .cat:hover .fan img:nth-child(1){transform:translate(-3%,-3%) scale(1.04)}
 .cat:hover .fan img:nth-child(2){transform:translate(5%,-5%) rotate(10deg)}
 .cat:hover .fan img:nth-child(3){transform:translate(6%,3%) rotate(-8deg)}
@@ -316,28 +320,34 @@ a,button,summary,input,select,label{touch-action:manipulation}
 
 
 /* Pool */
-.pool{position:relative;isolation:isolate;color:#fff;background:linear-gradient(165deg,#2563c9 0%,#174a96 35%,#0d2a5c 75%,#0a2150 100%);overflow:hidden}
-.pool::before{content:"";position:absolute;inset:0;z-index:-1;background:
-   linear-gradient(rgba(255,255,255,.055) 2px,transparent 2px) 0 0/44px 44px,
-   linear-gradient(90deg,rgba(255,255,255,.055) 2px,transparent 2px) 0 0/44px 44px;
-   -webkit-mask-image:radial-gradient(90% 85% at 75% 55%,#000 0%,transparent 78%);mask-image:radial-gradient(90% 85% at 75% 55%,#000 0%,transparent 78%)}
-.pool::after{content:"";position:absolute;z-index:-1;right:-10%;top:-30%;width:70%;aspect-ratio:1;background:radial-gradient(closest-side,rgba(141,180,240,.4),transparent);pointer-events:none}
+.pool{position:relative;isolation:isolate;color:#fff;background:#0a6fb5 url(pool.webp) center/cover no-repeat;overflow:hidden;padding-block:clamp(5rem,10vw,8.5rem)}
+/* deep end on the left so the white text stays readable; sunlit shallow end on the right */
+.pool::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(5,36,98,.95) 0%,rgba(7,56,132,.88) 32%,rgba(9,92,172,.5) 54%,rgba(10,110,190,0) 76%)}
+/* sandstone pool coping along the top and bottom edges */
+.pool::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:
+   linear-gradient(180deg,#f6e8c9,#dcc496) top/100% 22px no-repeat,
+   linear-gradient(180deg,rgba(3,28,78,.5),transparent) 0 22px/100% 26px no-repeat,
+   linear-gradient(0deg,#f6e8c9,#dcc496) bottom/100% 22px no-repeat,
+   linear-gradient(0deg,rgba(3,28,78,.4),transparent) 0 calc(100% - 22px)/100% 22px no-repeat}
 .pool-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(2.5rem,6vw,5rem);align-items:center}
 .pool h2{color:#fff}
 .pool .lede{color:var(--on-blue-muted)}
-.svc{list-style:none;margin:0 0 2rem;padding:0;border-top:1px solid rgba(255,255,255,.2)}
-.svc li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.2rem 1.5rem;align-items:baseline;padding:1.15rem 0;border-bottom:1px solid rgba(255,255,255,.2)}
+.svc{list-style:none;margin:0 0 2rem;padding:0;border-top:1px solid rgba(255,255,255,.28)}
+.svc li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.2rem 1.5rem;align-items:baseline;padding:1.15rem 0;border-bottom:1px solid rgba(255,255,255,.28)}
 .svc b{font-family:var(--display);font-weight:600;font-size:1.29rem;letter-spacing:-.03em;line-height:1.15}
 .svc .price{font-family:var(--display);font-size:1.29rem;font-weight:600;color:var(--gold-on-blue);white-space:nowrap;letter-spacing:-.03em}
 .svc span{grid-column:1/-1;color:var(--on-blue-muted);font-size:1.02rem}
 .dolphin{position:relative;display:grid;justify-items:center}
-.dolphin-img{position:relative;z-index:2;width:min(88%,440px);margin-bottom:-22%;filter:drop-shadow(0 40px 40px rgba(3,12,32,.5))}
-.dolphin-card{position:relative;width:100%;background:linear-gradient(180deg,rgba(255,255,255,.17),rgba(255,255,255,.07));border-radius:var(--r-xl);padding:clamp(6.5rem,24%,8.5rem) clamp(1.4rem,3vw,2.25rem) clamp(1.4rem,3vw,2.25rem);display:grid;gap:.9rem;box-shadow:inset 0 0 0 1px rgba(255,255,255,.22),inset 0 1px 0 rgba(255,255,255,.4),var(--sh-3);}
+.dolphin-img{position:relative;z-index:3;width:min(88%,440px);margin-bottom:-22%;filter:drop-shadow(0 34px 30px rgba(2,30,84,.55))}
+.floaty{position:absolute;pointer-events:none;filter:drop-shadow(10px 16px 12px rgba(2,36,96,.42))}
+.floaty.ring{right:-24%;top:-9%;width:54%;z-index:1;transform:rotate(-14deg)}
+.floaty.ball{left:-17%;bottom:-8%;width:24%;z-index:4;transform:rotate(18deg)}
+.dolphin-card{position:relative;z-index:2;width:100%;background:linear-gradient(180deg,rgba(8,44,112,.86),rgba(6,30,84,.9));border-radius:var(--r-xl);padding:clamp(6.5rem,24%,8.5rem) clamp(1.4rem,3vw,2.25rem) clamp(1.4rem,3vw,2.25rem);display:grid;gap:.9rem;box-shadow:inset 0 0 0 1px rgba(255,255,255,.22),inset 0 1px 0 rgba(255,255,255,.35),0 30px 60px -20px rgba(2,24,70,.6)}
 .dolphin-card h3{font-size:clamp(1.462rem,2.6vw,1.892rem);color:#fff;letter-spacing:-.03em}
 .dolphin-card p{color:var(--on-blue-muted)}
 .dolphin-card .by{font-size:.98rem;color:var(--gold-on-blue);font-weight:600}
 .dolphin-card .row{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.4rem}
-@media (max-width:900px){ .pool-grid{grid-template-columns:1fr} .dolphin{max-width:520px;margin-inline:auto;width:100%} }
+@media (max-width:900px){ .pool-grid{grid-template-columns:1fr} .dolphin{max-width:520px;margin-inline:auto;width:100%;margin-top:2rem} .pool::before{background:linear-gradient(180deg,rgba(5,36,98,.95) 0%,rgba(7,56,132,.9) 48%,rgba(9,92,172,.45) 60%,rgba(10,110,190,0) 72%)} .floaty.ring{right:-14%} .floaty.ball{left:-4%;bottom:-6%;width:21%} }
 
 /* Trade */
 .trade-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(2rem,5vw,4.5rem);align-items:start}
@@ -709,7 +719,7 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
       <div>
         <div class="sec-head">
           <h2>Everything for your pool, and someone to look after it.</h2>
-          <p class="lede">Chemicals, equipment, testing and servicing, anywhere on the Atherton Tablelands.</p>
+          <p class="lede">So the only thing left to do on a sunny Sunday is swim. Chemicals, equipment, testing and servicing, anywhere on the Atherton Tablelands.</p>
         </div>
         <ul class="svc">
           <li><b>Water testing</b><em class="price" style="font-style:normal">$9</em><span>Free when you buy any pool product. Bring a bottle of pool water.</span></li>
@@ -720,6 +730,8 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
         <a class="btn btn-gold" href="#contact" data-topic="Pool servicing, clean or repair">Book a service or repair</a>
       </div>
       <div class="dolphin">
+        <svg class="floaty ring" viewBox="0 0 220 220" aria-hidden="true"><defs><radialGradient id="rg" cx="35%" cy="30%" r="80%"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#7a4b00" stop-opacity=".28"/></radialGradient></defs><circle cx="110" cy="110" r="74" fill="none" stroke="#fffdf6" stroke-width="56"/><circle cx="110" cy="110" r="74" fill="none" stroke="#ffb81f" stroke-width="56" stroke-dasharray="29.06 29.06"/><circle cx="110" cy="110" r="74" fill="none" stroke="url(#rg)" stroke-width="56"/><path d="M52 92a62 62 0 0 1 40-42" fill="none" stroke="#fff" stroke-opacity=".75" stroke-width="7" stroke-linecap="round"/></svg>
+        <svg class="floaty ball" viewBox="0 0 120 120" aria-hidden="true"><defs><radialGradient id="bg" cx="34%" cy="28%" r="85%"><stop offset="0" stop-color="#fff" stop-opacity=".6"/><stop offset=".4" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#03204f" stop-opacity=".35"/></radialGradient><clipPath id="bc"><circle cx="60" cy="60" r="56"/></clipPath></defs><g clip-path="url(#bc)"><path d="M46 44L112.6 40.8A56 56 0 0 1 102.9 96.0Z" fill="#ef4444"/><path d="M46 44L102.9 96.0A56 56 0 0 1 50.3 115.1Z" fill="#fffdf6"/><path d="M46 44L50.3 115.1A56 56 0 0 1 7.4 79.2Z" fill="#ffc531"/><path d="M46 44L7.4 79.2A56 56 0 0 1 17.1 24.0Z" fill="#fffdf6"/><path d="M46 44L17.1 24.0A56 56 0 0 1 69.7 4.9Z" fill="#2f7df6"/><path d="M46 44L69.7 4.9A56 56 0 0 1 112.6 40.8Z" fill="#fffdf6"/></g><circle cx="46" cy="44" r="7" fill="#fffdf6"/><circle cx="60" cy="60" r="56" fill="url(#bg)"/></svg>
         <img class="dolphin-img" src="dolphin-520.webp" srcset="dolphin-520.webp 520w, dolphin.webp 778w" sizes="(max-width:900px) 80vw, 440px" alt="Dolphin M400 robotic pool cleaner" width="778" height="900" loading="lazy" decoding="async">
         <div class="dolphin-card">
           <p class="by">Dolphin by Maytronics</p>
@@ -1352,7 +1364,7 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
   function renderCats(){
     catsEl.innerHTML=CATS.map(function(c){
       var n=PRODUCTS.filter(function(p){ return p.cat===c; }).length;
-      var fan=(FAN[c]||[]).map(function(pid){ var i=BYPID[pid]; return i!==undefined&&PRODUCTS[i].img?'<img src="'+esc(mid(PRODUCTS[i]))+'" alt="" loading="lazy" decoding="async" width="300" height="300">':''; }).join('');
+      var fan=(FAN[c]||[]).map(function(pid){ var i=BYPID[pid]; return i!==undefined&&PRODUCTS[i].img?'<img src="img/c/'+pid+'.webp" alt="" loading="lazy" decoding="async">':''; }).join('');
       if(fan) return '<button type="button" class="cat feat" data-cat="'+esc(c)+'"><span class="cat-txt"><span><b>'+esc(c)+'</b><em>'+esc(CATDESC[c]||'')+'</em></span><span class="cat-go"><i>'+ARROW+'</i><span>'+n+' products</span></span></span><span class="fan" aria-hidden="true">'+fan+'</span></button>';
       return '<button type="button" class="cat mini" data-cat="'+esc(c)+'"><span class="ic" aria-hidden="true">'+icon(c)+'</span><span><b>'+esc(c)+'</b><span>'+n+' products</span></span></button>';
     }).join('');
