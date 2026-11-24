@@ -243,15 +243,33 @@ a,button,summary,input,select,label{touch-action:manipulation}
 .cat:hover .fan img:nth-child(1){transform:translate(-3%,-3%) scale(1.04)}
 .cat:hover .fan img:nth-child(2){transform:translate(5%,-5%) rotate(10deg)}
 .cat:hover .fan img:nth-child(3){transform:translate(6%,3%) rotate(-8deg)}
+.cat.photo{grid-column:span 4;min-height:178px;color:#fff;padding:1.35rem 1.5rem;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.82fr);gap:.75rem;background:linear-gradient(140deg,var(--c1),var(--c2));box-shadow:var(--sh-1),inset 0 1px 0 rgba(255,255,255,.3),inset 0 0 0 1px rgba(255,255,255,.12)}
+.cat.photo:hover{box-shadow:var(--sh-2),inset 0 1px 0 rgba(255,255,255,.3),inset 0 0 0 1px rgba(255,255,255,.2)}
+.cat.photo::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 90% at 80% 55%,rgba(255,255,255,.28),transparent 70%);pointer-events:none}
+.cat.photo:nth-child(5){--c1:#19a6bd;--c2:#0b588c}
+.cat.photo:nth-child(6){--c1:#2f8be0;--c2:#17409a}
+.cat.photo:nth-child(7){--c1:#5a6fe8;--c2:#2a2f96}
+.cat.photo:nth-child(8){--c1:#1f9bd6;--c2:#0d4a9c}
+.cat.photo:nth-child(9){--c1:#3d7cf0;--c2:#1c3a9a}
+.cat.photo:nth-child(10){--c1:#27b4d2;--c2:#0c5f9c}
+.cat.photo .cat-txt b{font-size:clamp(1.2rem,1.75vw,1.45rem);line-height:1.1}
+.cat-n{font-weight:600;font-size:.95rem;color:rgba(255,255,255,.92)}
+.duo{position:relative;align-self:stretch;min-height:120px}
+.duo img{position:absolute;object-fit:contain;filter:drop-shadow(0 10px 10px rgba(2,14,48,.45));transition:transform .12s var(--ease)}
+.duo img:nth-child(1){left:0;bottom:0;width:66%;height:96%;object-position:50% 100%;z-index:2}
+.duo img:nth-child(2){right:-4%;top:0;width:46%;height:70%;object-position:50% 0;transform:rotate(6deg)}
+.cat:hover .duo img:nth-child(1){transform:translate(-2%,-2%) scale(1.04)}
+.cat:hover .duo img:nth-child(2){transform:translate(4%,-4%) rotate(10deg)}
 .cat.mini{grid-column:span 2;background:linear-gradient(180deg,#153878,var(--surface-2));color:var(--ink);padding:1.2rem 1.25rem;display:grid;gap:.9rem;align-content:space-between;min-height:150px;box-shadow:var(--sh-1),var(--gloss)}
 .cat.mini:hover{box-shadow:var(--sh-2),var(--gloss)}
 .cat.mini .ic{width:46px;height:46px;border-radius:14px;background:linear-gradient(160deg,var(--azure),var(--royal));color:var(--gold-on-blue);display:grid;place-items:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 8px 16px -8px rgba(13,42,92,.6)}
 .cat.mini .ic svg{width:23px;height:23px}
 .cat.mini b{color:var(--ink);font-family:var(--display);font-weight:600;font-size:1.118rem;letter-spacing:-.03em;line-height:1.1;display:block}
 .cat.mini span{font-size:.92rem;color:var(--muted)}
-@media (max-width:1060px){ .cat.mini{grid-column:span 4} }
+@media (max-width:1060px){ .cat.mini{grid-column:span 4} .cat.photo{grid-column:span 6} }
 @media (max-width:860px){ .cat.feat{grid-column:span 12;min-height:220px} .cat.mini{grid-column:span 6} }
 @media (max-width:480px){ .cat.feat{padding:1.4rem 1.3rem;grid-template-columns:minmax(0,1fr) minmax(0,.85fr);min-height:200px} .cat-go span{display:none} }
+@media (max-width:560px){ .cat.photo{grid-template-columns:minmax(0,1fr);padding:1rem 1.05rem 1.1rem;min-height:0;gap:.7rem} .cat.photo .duo{order:-1;height:96px;min-height:0} .cat.photo .cat-txt{gap:.35rem} .cat.photo .cat-txt b{font-size:1.05rem} .cat-n{font-size:.88rem} }
 
 .results{background:linear-gradient(180deg,var(--surface),var(--surface-2));border-radius:var(--r-l);box-shadow:var(--sh-1),var(--gloss);padding:.5rem clamp(.9rem,2.2vw,1.75rem) 1rem}
 .rhead{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem 1.25rem;padding:1rem 0;border-bottom:1px solid var(--line)}
@@ -296,7 +314,7 @@ a,button,summary,input,select,label{touch-action:manipulation}
 .noresults a{color:var(--link);font-weight:600}
 .linkbtn{background:none;border:0;color:var(--link);text-decoration:underline;padding:0;min-height:44px;font-weight:600}
 .more{margin-top:1.75rem;color:var(--muted);font-size:1.02rem;max-width:70ch}
-.more a{color:var(--link);font-weight:600;display:inline-block;padding-block:.6rem;margin-block:-.6rem}
+.more a{color:var(--link);font-weight:600;text-decoration:none;display:inline-block;padding-block:.6rem;margin-block:-.6rem}
 
 /* Light in the water: soft glows behind the plain sections so the dark never goes flat */
 #top-sellers,#trade,#stores,#faq{position:relative;isolation:isolate;overflow:clip}
@@ -502,7 +520,7 @@ a,button,summary,input,select,label{touch-action:manipulation}
 .form-foot .btn{min-width:160px}
 .form-foot small{color:var(--muted);font-size:.98rem}
 .privacy-line{font-size:.95rem;color:var(--muted);line-height:1.45}
-.privacy-line a{color:var(--link);display:inline-block;padding-block:.6rem;margin-block:-.6rem;font-weight:600}
+.privacy-line a{color:var(--link);text-decoration:none;display:inline-block;padding-block:.6rem;margin-block:-.6rem;font-weight:600}
 .sent{box-shadow:inset 0 0 0 2px var(--gold);border-radius:var(--r-m);padding:1.25rem 1.4rem;display:grid;gap:.75rem}
 .sent b{font-family:var(--display);font-weight:600;font-size:1.29rem}
 .sent pre{margin:0;white-space:pre-wrap;font:inherit;font-size:.98rem;color:var(--muted);background:#0a1f49;padding:.9rem;border-radius:12px;max-height:220px;overflow:auto;box-shadow:inset 0 0 0 1px var(--line)}
@@ -720,7 +738,7 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
         <div class="rhead"><h2 class="rtitle" id="rtitle" tabindex="-1"></h2><button type="button" class="back" id="backcats"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>All categories</button><span class="count" id="count" aria-live="polite"></span></div>
         <div class="plist" id="plist"></div>
       </div>
-      <p class="more">These are our best sellers. We stock over 6,000 lines in store, including ice boxes, workwear, party and pantry. Can't see it? <a href="#contact">Ask us</a>.</p>
+      <p class="more">Over 6,000 lines in store. Can't see it? <a href="#contact">Ask us</a>.</p>
     </div>
   </section>
 
@@ -730,7 +748,7 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
         <div class="sec-head">
           <p class="by">Dolphin by Maytronics</p>
           <h2>Robots that clean the pool for you.</h2>
-          <p class="lede">Floor, walls and waterline, on their own. We stock the range, show you how they work and keep the parts.</p>
+          <p class="lede">Floor, walls and waterline, on their own.</p>
         </div>
         <div class="row">
           <a class="btn btn-gold" href="#contact" data-topic="Dolphin pool cleaners">Ask which Dolphin suits your pool</a>
@@ -748,7 +766,7 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
         <div class="ltabs" id="ltabs" role="group" aria-label="Dolphin series"></div>
         <div class="lhead" aria-hidden="true"><span>Model</span><span>Pool size</span><span>Cleans</span><span>Cable</span><span>Warranty</span><span></span></div>
         <div class="lrows" id="lrows"></div>
-        <p class="fine">Specs are from Maytronics Australia. Ask us to confirm before you buy.</p>
+        <p class="fine">Specs from Maytronics Australia. Confirm with us before you buy.</p>
       </div>
     </div>
   </section>
@@ -760,10 +778,10 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
         <p class="lede">Anywhere on the Atherton Tablelands.</p>
       </div>
       <ul class="svc">
-        <li><b>Water testing</b><em class="price">$9</em><span>Free with any pool product. Bring a bottle of pool water.</span></li>
-        <li><b>Pool servicing</b><em class="price">from $66</em><span>Regular visits, one-off cleans and green-pool recoveries.</span></li>
-        <li><b>Pumps, chlorinators and heaters</b><span>Supplied, fitted, repaired or replaced.</span></li>
-        <li><b>Chemicals and salt</b><span>Chlorine, acid, salt and balancers, on the shelf.</span></li>
+        <li><b>Water testing</b><em class="price">$9</em><span>Free with any pool product.</span></li>
+        <li><b>Pool servicing</b><em class="price">from $66</em><span>Regular, one-off and green-pool cleans.</span></li>
+        <li><b>Pumps, chlorinators and heaters</b><span>Supplied, fitted and repaired.</span></li>
+        <li><b>Chemicals and salt</b><span>Chlorine, acid, salt and balancers.</span></li>
       </ul>
       <div class="row mid">
         <a class="btn btn-gold" href="#contact" data-topic="Pool servicing, clean or repair">Book a service or repair</a>
@@ -777,20 +795,20 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
       <div class="trade-grid">
         <div class="sec-head">
           <h2>Trade accounts for local businesses.</h2>
-          <p class="lede">Cafes, cleaners, farms, schools, clubs and anyone with an ABN.</p>
+          <p class="lede">For any business with an ABN.</p>
         </div>
         <div>
           <div class="perks">
-            <div class="perk"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12l-8 8-9-9V3h8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></span><div><h3>Trade prices</h3><p>On the full range, at both stores.</p></div></div>
-            <div class="perk"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg></span><div><h3>One monthly invoice</h3><p>Buy at either store, pay once a month.</p></div></div>
-            <div class="perk"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v8H3zM14 10h4l3 3v2h-7z"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg></span><div><h3>Free Friday delivery</h3><p>Order by Thursday. Mareeba, Atherton and nearby towns.</p></div></div>
+            <div class="perk"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12l-8 8-9-9V3h8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></span><div><h3>Trade prices</h3><p>On the full range.</p></div></div>
+            <div class="perk"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg></span><div><h3>One monthly invoice</h3><p>Buy at either store.</p></div></div>
+            <div class="perk"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v8H3zM14 10h4l3 3v2h-7z"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg></span><div><h3>Free Friday delivery</h3><p>Mareeba and Atherton. Order by Thursday.</p></div></div>
           </div>
           <div class="steps">
             <h3>Open one in three steps</h3>
             <ol>
-              <li>Pick up a form at the counter of either store.</li>
-              <li>Fill in your business details and ABN.</li>
-              <li>Hand it back. We set you up.</li>
+              <li>Pick up a form at either store.</li>
+              <li>Add your business details and ABN.</li>
+              <li>Hand it back.</li>
             </ol>
             <a href="#stores" class="btn btn-gold" id="trade-apply">Find your nearest store</a>
           </div>
@@ -806,8 +824,8 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
   <section id="about" class="sec about">
     <div class="wrap about-grid">
       <div class="about-copy">
-        <p class="big">A family business with two stores on the Tablelands, and people behind the counter who know the products.</p>
-        <p class="small">If we don't have it, we will find it. If you're not sure, ask.</p>
+        <p class="big">Family owned. Two stores. People who know the products.</p>
+        <p class="small">If we don't have it, we'll find it.</p>
       </div>
       <div class="reviews" aria-label="Google reviews">
         <div class="review"><span class="score">4.7</span><span class="stars" aria-label="4.7 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><b>Mareeba <small>from 7 Google reviews</small></b><div class="links"><a href="https://www.google.com/maps/place/?q=place_id:ChIJNaHg-F5_gmkRquXg2YeYKk0" target="_blank" rel="noopener">Read reviews</a><a href="https://search.google.com/local/writereview?placeid=ChIJNaHg-F5_gmkRquXg2YeYKk0" target="_blank" rel="noopener">Leave a review</a></div></div>
@@ -820,7 +838,6 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
     <div class="wrap">
       <div class="sec-head">
         <h2>Come and see us.</h2>
-        <p class="lede">Tap an address for directions, or a number to call.</p>
       </div>
       <div class="store-grid">
         <article class="store" id="store-mareeba">
@@ -832,7 +849,6 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
           <div class="store-body">
             <div class="store-contact">
               <a class="tel" href="tel:+61740922392">(07) 4092 2392</a>
-              <a href="mailto:admin@northernsuppliers.net.au">admin@northernsuppliers.net.au</a>
             </div>
             <div class="hours" data-hours="mareeba">
               <span data-day="1"><em>Monday</em>8:30 am to 5:00 pm</span>
@@ -860,7 +876,6 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
           <div class="store-body">
             <div class="store-contact">
               <a class="tel" href="tel:+61740917900">(07) 4091 7900</a>
-              <a href="mailto:admin@northernsuppliers.net.au">admin@northernsuppliers.net.au</a>
               <small>Fax (07) 4091 7966</small>
             </div>
             <div class="hours" data-hours="atherton">
@@ -881,7 +896,7 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
           </div>
         </article>
       </div>
-      <p class="closed">Closed Sundays and public holidays. Coming up:</p>
+      <p class="closed">Closed on public holidays:</p>
       <ul class="hol" id="holidays"></ul>
     </div>
   </section>
@@ -890,19 +905,19 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
     <div class="wrap faq-grid">
       <div class="sec-head">
         <h2>Quick answers.</h2>
-        <p class="lede">Still stuck? <a href="#contact" style="color:var(--link);font-weight:600">Ask us</a> and we reply the same day during store hours.</p>
+        <p class="lede">Still stuck? <a href="#contact" style="color:var(--link);font-weight:600;text-decoration:none">Ask us</a>.</p>
       </div>
       <div class="faq-list">
-        <details><summary>Do you test pool water?</summary><div class="ans"><p>Yes, at both stores. $9 a test, free when you buy any pool product. Bring a bottle of pool water.</p></div></details>
-        <details><summary>Can I order online?</summary><div class="ans"><p>Add items to your order list on this page and send it to us. We confirm price and stock, then you collect in store. No online payment yet.</p></div></details>
-        <details><summary>Do you deliver?</summary><div class="ans"><p>Yes, free on Fridays for trade account customers around Mareeba and Atherton. Order by Thursday.</p></div></details>
-        <details><summary>How do I open a trade account?</summary><div class="ans"><p>Pick up a form at the counter of either store, fill it in, and hand it back. We set you up.</p></div></details>
-        <details><summary>Do you sell to the public?</summary><div class="ans"><p>Yes. Everyone is welcome, trade or not.</p></div></details>
-        <details><summary>Can you fix my pool pump or chlorinator?</summary><div class="ans"><p>Yes. We repair, replace and install pumps, chlorinators, filters and heaters anywhere on the Tablelands. Send us a photo or the model.</p></div></details>
-        <details><summary>Which Dolphin pool cleaner should I buy?</summary><div class="ans"><p>Tell us your pool size and surface and we will match one. We stock the range and show you how they work.</p></div></details>
-        <details><summary>I can't find a product on the website.</summary><div class="ans"><p>We list our best sellers here but stock over 6,000 products. Add it as a custom line in your order list, or ring us.</p></div></details>
+        <details><summary>Do you test pool water?</summary><div class="ans"><p>Yes, at both stores. $9, or free with any pool product. Bring a bottle of pool water.</p></div></details>
+        <details><summary>Can I order online?</summary><div class="ans"><p>Add items to your order list and send it. We confirm price and stock, then you collect and pay in store.</p></div></details>
+        <details><summary>Do you deliver?</summary><div class="ans"><p>Yes, free on Fridays for trade accounts around Mareeba and Atherton. Order by Thursday.</p></div></details>
+        <details><summary>How do I open a trade account?</summary><div class="ans"><p>Pick up a form at either store, fill it in and hand it back.</p></div></details>
+        <details><summary>Do you sell to the public?</summary><div class="ans"><p>Yes. Everyone is welcome.</p></div></details>
+        <details><summary>Can you fix my pool pump or chlorinator?</summary><div class="ans"><p>Yes. We repair, replace and install pumps, chlorinators, filters and heaters across the Tablelands.</p></div></details>
+        <details><summary>Which Dolphin pool cleaner should I buy?</summary><div class="ans"><p>Tell us your pool size and surface and we'll match one.</p></div></details>
+        <details><summary>I can't find a product on the website.</summary><div class="ans"><p>We stock over 6,000 products. Add it as a custom line in your order list, or ring us.</p></div></details>
         <details><summary>When are you open?</summary><div class="ans"><p>Mareeba: weekdays 8:30 am to 5 pm. Atherton: weekdays 8 am to 5 pm. Both: Saturday 9 am to 12 noon. Closed Sundays and public holidays.</p></div></details>
-        <details><summary>Do you service pools?</summary><div class="ans"><p>Yes, across the Atherton Tablelands. Regular visits from $66, plus one-off cleans and green-pool recoveries. Send us your suburb and we will book you in.</p></div></details>
+        <details><summary>Do you service pools?</summary><div class="ans"><p>Yes, across the Atherton Tablelands, from $66. Regular visits, one-off cleans and green-pool recoveries.</p></div></details>
       </div>
     </div>
   </section>
@@ -911,7 +926,7 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
     <div class="wrap contact-grid">
       <div class="contact-copy">
         <h2>Get in touch.</h2>
-        <p class="lede">Quotes, orders, pool servicing or a question. We reply the same day during store hours.</p>
+        <p class="lede">We reply the same day during store hours.</p>
         <ul class="contact-list">
           <li><small>Mareeba</small><a href="tel:+61740922392">(07) 4092 2392</a></li>
           <li><small>Atherton</small><a href="tel:+61740917900">(07) 4091 7900</a></li>
@@ -929,22 +944,14 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
           <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="e-email"><small class="err" id="e-email" role="alert"></small></div>
         </div>
         <div class="two">
-          <div class="field"><label for="f-store">Nearest store</label><select id="f-store" name="store"><option>Mareeba</option><option>Atherton</option><option>Not sure</option></select></div>
-          <div class="field"><label for="f-topic">What is it about?</label>
+          <div class="field"><label for="f-collect">Store</label><select id="f-collect" name="store"><option>Mareeba</option><option>Atherton</option><option>Not sure yet</option></select></div>
+          <div class="field"><label for="f-topic">About</label>
             <select id="f-topic" name="topic"><option>Click and collect order</option><option>Product or price quote</option><option>Pool servicing, clean or repair</option><option>Dolphin pool cleaners</option><option>Call me back</option><option>Trade account question</option><option>Special order</option><option>Delivery</option><option>Something else</option></select>
           </div>
         </div>
-        <div class="two">
-          <div class="field"><label for="f-fulfil">Pick up or delivery</label><select id="f-fulfil" name="fulfilment"><option>Pick up in store</option><option>Friday local delivery (account customers)</option><option>Not sure yet</option></select></div>
-          <div class="field"><label for="f-collect">Collect from</label><select id="f-collect" name="collect"><option>Mareeba</option><option>Atherton</option><option>Not sure yet</option></select></div>
-        </div>
-        <div class="two">
-          <div class="field"><label for="f-when">When do you need it?</label><input id="f-when" name="when" placeholder="e.g. Thursday morning"></div>
-          <div class="field"><label for="f-calltime">Best time to call you</label><input id="f-calltime" name="best_time_to_call" placeholder="e.g. weekdays after 2 pm"></div>
-        </div>
-        <div class="field"><label for="f-msg">Your message or order</label><textarea id="f-msg" name="message" required placeholder="What do you need, how many, and when?" aria-describedby="e-msg"></textarea><small class="err" id="e-msg" role="alert"></small></div>
-        <div class="field"><label for="f-file">Attach a list or photo <i>(optional)</i></label><input id="f-file" name="attachment" type="file" accept=".pdf,.jpg,.jpeg,.png,.xlsx,.csv,.doc,.docx"><small class="hint">PDF, photo or spreadsheet, up to 10 MB.</small></div>
-        <label class="check" for="f-trade"><input type="checkbox" id="f-trade" name="trade_account" value="yes"> <span>I have a trade account with you</span></label>
+        <div class="field"><label for="f-msg">Message</label><textarea id="f-msg" name="message" required placeholder="What do you need, how many, and when?" aria-describedby="e-msg"></textarea><small class="err" id="e-msg" role="alert"></small></div>
+        <div class="field"><label for="f-file">Attach a list or photo <i>(optional)</i></label><input id="f-file" name="attachment" type="file" accept=".pdf,.jpg,.jpeg,.png,.xlsx,.csv,.doc,.docx"></div>
+        <label class="check" for="f-trade"><input type="checkbox" id="f-trade" name="trade_account" value="yes"> <span>I have a trade account</span></label>
         <div class="form-foot">
           <button class="btn btn-gold" type="submit">Send</button>
           <small id="f-help" role="status">Opens in your email app, ready to send.</small>
@@ -977,7 +984,7 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
       <p class="qv-desc" id="qv-desc"></p>
       <dl class="qv-specs" id="qv-specs"></dl>
       <div class="qv-buy" id="qv-buy"></div>
-      <p class="fine">Collect in store. We confirm price and stock before you come in.</p>
+      <p class="fine">We confirm price and stock before you collect.</p>
     </div>
   </div>
 </dialog>
@@ -989,7 +996,7 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
   </div>
   <div class="drawer-body">
     <div id="lines"></div>
-    <div class="empty" id="empty"><b>Nothing added yet.</b><span>Use the Add buttons next to any product, or type what you need below.</span></div>
+    <div class="empty" id="empty"><b>Nothing added yet.</b><span>Tap Add on any product, or type it below.</span></div>
     <div class="custom">
       <label for="custom-item">Something not listed?</label>
       <input id="custom-item" type="text" placeholder="e.g. Oates mop heads x 6">
@@ -1045,7 +1052,7 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
     </div>
     <p class="wordmark" aria-hidden="true">Northern Suppliers</p>
     <div class="ftr-base">
-      <p>&copy; <span id="year">2026</span> Northern Suppliers Pty Ltd. Mareeba and Atherton, Queensland. <span class="stamp">Site updated 25 Nov 2026, 8:09 am</span></p>
+      <p>&copy; <span id="year">2026</span> Northern Suppliers Pty Ltd. Mareeba and Atherton, Queensland. <span class="stamp">Site updated 25 Nov 2026, 8:17 am</span></p>
       <details class="privacy" id="privacy">
         <summary>Privacy</summary>
         <p>When you send an enquiry, we get what you typed (name, phone, email, message, any attachment) and use it only to reply. We keep it with our normal business records. We never sell or share it, and we don't add you to a mailing list.</p>
@@ -1056,7 +1063,7 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
   </div>
 </footer>
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do you test pool water?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, at both stores. $9 a test, free when you buy any pool product. Bring a bottle of pool water."}}, {"@type": "Question", "name": "Can I order online?", "acceptedAnswer": {"@type": "Answer", "text": "Add items to your order list on this page and send it to us. We confirm price and stock, then you collect in store. No online payment yet."}}, {"@type": "Question", "name": "Do you deliver?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, free on Fridays for trade account customers around Mareeba and Atherton. Order by Thursday."}}, {"@type": "Question", "name": "How do I open a trade account?", "acceptedAnswer": {"@type": "Answer", "text": "Pick up a form at the counter of either store, fill it in, and hand it back. We set you up."}}, {"@type": "Question", "name": "Do you sell to the public?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Everyone is welcome, trade or not."}}, {"@type": "Question", "name": "Can you fix my pool pump or chlorinator?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We repair, replace and install pumps, chlorinators, filters and heaters anywhere on the Tablelands. Send us a photo or the model."}}, {"@type": "Question", "name": "Which Dolphin pool cleaner should I buy?", "acceptedAnswer": {"@type": "Answer", "text": "Tell us your pool size and surface and we will match one. We stock the range and show you how they work."}}, {"@type": "Question", "name": "I can't find a product on the website.", "acceptedAnswer": {"@type": "Answer", "text": "We list our best sellers here but stock over 6,000 products. Add it as a custom line in your order list, or ring us."}}, {"@type": "Question", "name": "When are you open?", "acceptedAnswer": {"@type": "Answer", "text": "Mareeba: weekdays 8:30 am to 5 pm. Atherton: weekdays 8 am to 5 pm. Both: Saturday 9 am to 12 noon. Closed Sundays and public holidays."}}, {"@type": "Question", "name": "Do you service pools?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, across the Atherton Tablelands. Regular visits from $66, plus one-off cleans and green-pool recoveries. Send us your suburb and we will book you in."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do you test pool water?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, at both stores. $9, or free with any pool product. Bring a bottle of pool water."}}, {"@type": "Question", "name": "Can I order online?", "acceptedAnswer": {"@type": "Answer", "text": "Add items to your order list and send it. We confirm price and stock, then you collect and pay in store."}}, {"@type": "Question", "name": "Do you deliver?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, free on Fridays for trade accounts around Mareeba and Atherton. Order by Thursday."}}, {"@type": "Question", "name": "How do I open a trade account?", "acceptedAnswer": {"@type": "Answer", "text": "Pick up a form at either store, fill it in and hand it back."}}, {"@type": "Question", "name": "Do you sell to the public?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Everyone is welcome."}}, {"@type": "Question", "name": "Can you fix my pool pump or chlorinator?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We repair, replace and install pumps, chlorinators, filters and heaters across the Tablelands."}}, {"@type": "Question", "name": "Which Dolphin pool cleaner should I buy?", "acceptedAnswer": {"@type": "Answer", "text": "Tell us your pool size and surface and we'll match one."}}, {"@type": "Question", "name": "I can't find a product on the website.", "acceptedAnswer": {"@type": "Answer", "text": "We stock over 6,000 products. Add it as a custom line in your order list, or ring us."}}, {"@type": "Question", "name": "When are you open?", "acceptedAnswer": {"@type": "Answer", "text": "Mareeba: weekdays 8:30 am to 5 pm. Atherton: weekdays 8 am to 5 pm. Both: Saturday 9 am to 12 noon. Closed Sundays and public holidays."}}, {"@type": "Question", "name": "Do you service pools?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, across the Atherton Tablelands, from $66. Regular visits, one-off cleans and green-pool recoveries."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Northern Suppliers Pty Ltd","url":"https://northernsuppliers.net.au","logo":"https://northernsuppliers.net.au/logo.png","email":"admin@northernsuppliers.net.au","sameAs":["https://www.facebook.com/northernsuppliersmareeba/","https://www.facebook.com/northernsuppliersatherton/"],"department":[
  {"@type":"HardwareStore","name":"Northern Suppliers Mareeba","image":"https://northernsuppliers.net.au/logo.png","sameAs":["https://www.facebook.com/northernsuppliersmareeba/","https://www.google.com/maps/place/?q=place_id:ChIJNaHg-F5_gmkRquXg2YeYKk0"],"geo":{"@type":"GeoCoordinates","latitude":-16.9915738,"longitude":145.4218401},"hasMap":"https://www.google.com/maps/place/?q=place_id:ChIJNaHg-F5_gmkRquXg2YeYKk0","telephone":"+61740922392","email":"admin@northernsuppliers.net.au","address":{"@type":"PostalAddress","streetAddress":"80-88 Byrnes Street","addressLocality":"Mareeba","addressRegion":"QLD","postalCode":"4880","addressCountry":"AU"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"12:00"}],"specialOpeningHoursSpecification":[{"@type":"OpeningHoursSpecification","validFrom":"2026-12-25","validThrough":"2026-12-25"},{"@type":"OpeningHoursSpecification","validFrom":"2026-12-26","validThrough":"2026-12-26"},{"@type":"OpeningHoursSpecification","validFrom":"2026-12-28","validThrough":"2026-12-28"},{"@type":"OpeningHoursSpecification","validFrom":"2027-01-01","validThrough":"2027-01-01"},{"@type":"OpeningHoursSpecification","validFrom":"2027-01-26","validThrough":"2027-01-26"},{"@type":"OpeningHoursSpecification","validFrom":"2027-03-26","validThrough":"2027-03-26"},{"@type":"OpeningHoursSpecification","validFrom":"2027-03-27","validThrough":"2027-03-27"},{"@type":"OpeningHoursSpecification","validFrom":"2027-03-28","validThrough":"2027-03-28"},{"@type":"OpeningHoursSpecification","validFrom":"2027-03-29","validThrough":"2027-03-29"},{"@type":"OpeningHoursSpecification","validFrom":"2027-04-25","validThrough":"2027-04-25"},{"@type":"OpeningHoursSpecification","validFrom":"2027-05-03","validThrough":"2027-05-03"},{"@type":"OpeningHoursSpecification","validFrom":"2027-10-04","validThrough":"2027-10-04"},{"@type":"OpeningHoursSpecification","validFrom":"2027-12-25","validThrough":"2027-12-25"},{"@type":"OpeningHoursSpecification","validFrom":"2027-12-26","validThrough":"2027-12-26"},{"@type":"OpeningHoursSpecification","validFrom":"2027-12-27","validThrough":"2027-12-27"},{"@type":"OpeningHoursSpecification","validFrom":"2027-12-28","validThrough":"2027-12-28"}]},
  {"@type":"HardwareStore","name":"Northern Suppliers Atherton","image":"https://northernsuppliers.net.au/logo.png","sameAs":["https://www.facebook.com/northernsuppliersatherton/","https://www.google.com/maps/place/?q=place_id:ChIJTQKYiJt1gmkRJ6OHhtJYgGA"],"geo":{"@type":"GeoCoordinates","latitude":-17.2657994,"longitude":145.4771267},"hasMap":"https://www.google.com/maps/place/?q=place_id:ChIJTQKYiJt1gmkRJ6OHhtJYgGA","telephone":"+61740917900","faxNumber":"+61740917966","email":"admin@northernsuppliers.net.au","address":{"@type":"PostalAddress","streetAddress":"33 Mabel Street","addressLocality":"Atherton","addressRegion":"QLD","postalCode":"4883","addressCountry":"AU"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"12:00"}],"specialOpeningHoursSpecification":[{"@type":"OpeningHoursSpecification","validFrom":"2026-12-25","validThrough":"2026-12-25"},{"@type":"OpeningHoursSpecification","validFrom":"2026-12-26","validThrough":"2026-12-26"},{"@type":"OpeningHoursSpecification","validFrom":"2026-12-28","validThrough":"2026-12-28"},{"@type":"OpeningHoursSpecification","validFrom":"2027-01-01","validThrough":"2027-01-01"},{"@type":"OpeningHoursSpecification","validFrom":"2027-01-26","validThrough":"2027-01-26"},{"@type":"OpeningHoursSpecification","validFrom":"2027-03-26","validThrough":"2027-03-26"},{"@type":"OpeningHoursSpecification","validFrom":"2027-03-27","validThrough":"2027-03-27"},{"@type":"OpeningHoursSpecification","validFrom":"2027-03-28","validThrough":"2027-03-28"},{"@type":"OpeningHoursSpecification","validFrom":"2027-03-29","validThrough":"2027-03-29"},{"@type":"OpeningHoursSpecification","validFrom":"2027-04-25","validThrough":"2027-04-25"},{"@type":"OpeningHoursSpecification","validFrom":"2027-05-03","validThrough":"2027-05-03"},{"@type":"OpeningHoursSpecification","validFrom":"2027-10-04","validThrough":"2027-10-04"},{"@type":"OpeningHoursSpecification","validFrom":"2027-12-25","validThrough":"2027-12-25"},{"@type":"OpeningHoursSpecification","validFrom":"2027-12-26","validThrough":"2027-12-26"},{"@type":"OpeningHoursSpecification","validFrom":"2027-12-27","validThrough":"2027-12-27"},{"@type":"OpeningHoursSpecification","validFrom":"2027-12-28","validThrough":"2027-12-28"}]}
@@ -1126,7 +1133,7 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
     } else {
       bar.innerHTML='<a class="cb alt wide" href="#contact" id="cb-msg">'+CHAT+'<b>Closed now. Leave a message, we\u2019ll call you back.</b><span>'+esc(m.text)+'</span></a>';
     }
-    var cb=$('cb-msg'); if(cb) cb.addEventListener('click',function(){ $('f-topic').value='Call me back'; setTimeout(function(){ $('f-calltime').focus({preventScroll:true}); },50); });
+    var cb=$('cb-msg'); if(cb) cb.addEventListener('click',function(){ $('f-topic').value='Call me back'; setTimeout(function(){ $('f-phone').focus({preventScroll:true}); },50); });
   }
   function paint(){
     var day=qldNow().getDay();
@@ -1198,9 +1205,9 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
         }).catch(function(){ sub.disabled=false; help.textContent='That didn\u2019t send. Email admin@northernsuppliers.net.au or call a store.'; });
         return;
       }
-      var topic=v('f-topic'),store=v('f-store');
+      var topic=v('f-topic'),store=v('f-collect');
       var subject='Website enquiry: '+topic+' ('+store+')';
-      var body='Name: '+name+'\n'+(v('f-biz')?'Business: '+v('f-biz')+'\n':'')+'Phone: '+(v('f-phone')||'-')+'\nEmail: '+email+'\nNearest store: '+store+'\nPick up or delivery: '+v('f-fulfil')+'\nStore: '+v('f-collect')+'\nNeeded: '+(v('f-when')||'-')+'\nBest time to call: '+(v('f-calltime')||'-')+'\nTrade account: '+($('f-trade').checked?'yes':'no')+'\nEnquiry: '+topic+($('f-file').files.length?'\nAttachment to follow by email: '+$('f-file').files[0].name:'')+'\n\n'+msg;
+      var body='Name: '+name+'\n'+(v('f-biz')?'Business: '+v('f-biz')+'\n':'')+'Phone: '+(v('f-phone')||'-')+'\nEmail: '+email+'\nStore: '+store+'\nTrade account: '+($('f-trade').checked?'yes':'no')+'\nEnquiry: '+topic+($('f-file').files.length?'\nAttachment to follow by email: '+$('f-file').files[0].name:'')+'\n\n'+msg;
       track('form_submit',{topic:topic,store:store});
       var mail='mailto:admin@northernsuppliers.net.au?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
       $('sent-text').textContent='To: admin@northernsuppliers.net.au\nSubject: '+subject+'\n\n'+body;
@@ -1218,9 +1225,9 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
   var plist=$('plist'),q={value:''},countEl=$('count'),rtitle=$('rtitle'),activeCat=null;
   var catsEl=$('cats'),resultsEl=$('results'),chipsEl=$('chips');
   var CATS=['Pool','Chemicals','Washroom & hygiene','Catering & packaging','Cleaning','Jars, bottles & caps','Bags & paper','Kitchen & knives','Food & beverage','Matting & storage'];
-  var CATDESC={'Pool':'Dolphin cleaners and parts, chlorinators, pumps, salt and chemicals','Chemicals':'Chlorine, acid, dishwashing and floor care','Washroom & hygiene':'Toilet paper, hand towel, roll towel and tissues','Catering & packaging':'Coffee cups, containers, foil trays and cling wrap'};
-  /* Photos shown on the four big category tiles, by product ID. */
-  var FAN={'Pool':[132385,127553,127321],'Chemicals':[135445,126125,133228],'Washroom & hygiene':[129713,129169,128735],'Catering & packaging':[128630,129243,124817]};
+  var CATDESC={'Pool':'Dolphin cleaners, pumps, salt and chemicals','Chemicals':'Chlorine, acid, dishwashing and floor care','Washroom & hygiene':'Toilet paper, hand towel and tissues','Catering & packaging':'Cups, containers, trays and wrap'};
+  /* Photos shown on the category tiles, by product ID. Tiles with a description are the four big ones. */
+  var FAN={'Pool':[132385,127553,127321],'Chemicals':[135445,126125,133228],'Washroom & hygiene':[129713,129169,128735],'Catering & packaging':[128630,129243,124817],'Cleaning':[134038,126351],'Jars, bottles & caps':[132055,124418],'Bags & paper':[126856,134998],'Kitchen & knives':[128480,129785],'Food & beverage':[131005,130838],'Matting & storage':[124963,125226]};
   /* Order of the sub-headings when a single category is open. Types not listed follow in catalogue order. */
   var TYPE_ORDER=['Dolphin pool cleaners','Pool equipment','Pool chemicals','Pool service chemicals','Dolphin parts and accessories','Cups and lids','Food containers','Plates, cutlery and trays','Cake boards','Cake boxes and trays','Foil, wrap and baking paper','Doyleys','Straws, skewers and pizza','Docket books','Packaging supplies','Bags','Register rolls'];
   var FWW='Floor, walls and waterline';
@@ -1395,7 +1402,7 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
   $('sendorder').addEventListener('click',function(){
     if(!cart.length){ $('custom-item').focus(); return; }
     var txt='ORDER FOR COLLECTION ('+pickStore+')\n'+cart.map(function(c){ return c.qty+' x '+c.name; }).join('\n')+'\n\nNotes: ';
-    $('f-topic').value='Click and collect order'; $('f-store').value=pickStore; $('f-collect').value=pickStore; $('f-fulfil').value='Pick up in store';
+    $('f-topic').value='Click and collect order'; $('f-collect').value=pickStore;
     $('f-msg').value=txt;
     drawer.close();
     $('contact').scrollIntoView();
@@ -1420,6 +1427,7 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
     catsEl.innerHTML=CATS.map(function(c){
       var n=PRODUCTS.filter(function(p){ return p.cat===c; }).length;
       var fan=(FAN[c]||[]).map(function(pid){ var i=BYPID[pid]; return i!==undefined&&PRODUCTS[i].img?'<img src="img/c/'+pid+'.webp" alt="" loading="lazy" decoding="async">':''; }).join('');
+      if(fan&&!CATDESC[c]) return '<button type="button" class="cat photo" data-cat="'+esc(c)+'"><span class="cat-txt"><b>'+esc(c)+'</b><span class="cat-n">'+n+' products</span></span><span class="duo" aria-hidden="true">'+fan+'</span></button>';
       if(fan) return '<button type="button" class="cat feat" data-cat="'+esc(c)+'"><span class="cat-txt"><span><b>'+esc(c)+'</b><em>'+esc(CATDESC[c]||'')+'</em></span><span class="cat-go"><i>'+ARROW+'</i><span>'+n+' products</span></span></span><span class="fan" aria-hidden="true">'+fan+'</span></button>';
       return '<button type="button" class="cat mini" data-cat="'+esc(c)+'"><span class="ic" aria-hidden="true">'+icon(c)+'</span><span><b>'+esc(c)+'</b><span>'+n+' products</span></span></button>';
     }).join('');
