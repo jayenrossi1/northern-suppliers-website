@@ -150,7 +150,8 @@ a,button,summary,input,select,label{touch-action:manipulation}
 .hero-banner{display:block;flex:none;width:min(calc(var(--bh)*1.727),90vw);height:auto;filter:drop-shadow(0 18px 26px rgba(4,30,84,.35))}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1fr);justify-items:center;gap:clamp(1.75rem,3vw,2.5rem);padding-block:clamp(1.5rem,3vw,2.5rem) clamp(3rem,6vw,5rem);text-align:center}
 .hero-copy{display:grid;grid-template-columns:minmax(0,1fr);justify-items:center;gap:1.75rem;min-width:0;width:100%}
-.hero h1{font-size:clamp(2.1rem,4.6vw,3.7rem);line-height:1.06;letter-spacing:-.035em;text-shadow:0 2px 4px rgba(4,30,84,.35),0 6px 34px rgba(4,30,84,.45)}
+.hero h1{font-size:clamp(2.1rem,4.6vw,3.7rem);line-height:1.06;letter-spacing:-.035em;text-shadow:0 2px 4px rgba(4,30,84,.35),0 6px 34px rgba(4,30,84,.45);position:relative;isolation:isolate}
+.hero h1::before{content:"";position:absolute;z-index:-1;inset:-.55em -1.1em;background:radial-gradient(closest-side,rgba(6,44,112,.5),rgba(6,44,112,0));pointer-events:none}
 .hsearch{position:relative;z-index:5;width:100%;max-width:760px;text-align:left}
 .hsearch-field{display:flex;align-items:center;gap:.6rem;background:#fff;border-radius:26px;padding:.6rem .6rem .6rem 1.5rem;min-height:88px;box-shadow:inset 0 1px 0 #fff,0 0 0 5px rgba(255,203,92,.32),0 2px 4px rgba(3,12,32,.2),0 34px 70px -14px rgba(3,12,32,.7);transition:box-shadow .12s}
 .hsearch-field:focus-within{box-shadow:inset 0 1px 0 #fff,0 0 0 5px rgba(255,203,92,.95),0 34px 70px -14px rgba(3,12,32,.7)}
@@ -221,7 +222,7 @@ a,button,summary,input,select,label{touch-action:manipulation}
 .cat{all:unset;box-sizing:border-box;cursor:pointer;position:relative;overflow:hidden;border-radius:var(--r-l);transition:transform .12s var(--ease),box-shadow .12s var(--ease)}
 .cat:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .cat:hover{transform:translateY(-5px)}
-.cat.feat{grid-column:span 6;min-height:272px;color:#fff;padding:1.75rem 1.9rem;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.95fr);gap:1rem;background:linear-gradient(140deg,var(--c1),var(--c2));box-shadow:var(--sh-1),inset 0 1px 0 rgba(255,255,255,.3),inset 0 0 0 1px rgba(255,255,255,.12)}
+.cat.feat{grid-column:span 6;min-height:272px;color:#fff;padding:1.75rem 1.9rem;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.95fr);gap:1rem;background:linear-gradient(105deg,var(--c2) 0%,var(--c2) 30%,var(--c1) 100%);box-shadow:var(--sh-1),inset 0 1px 0 rgba(255,255,255,.3),inset 0 0 0 1px rgba(255,255,255,.12)}
 .cat.feat:hover{box-shadow:var(--sh-2),inset 0 1px 0 rgba(255,255,255,.3),inset 0 0 0 1px rgba(255,255,255,.2)}
 .cat.feat::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 85% at 78% 55%,rgba(255,255,255,.3),transparent 70%);pointer-events:none}
 .cat.feat:nth-child(1){--c1:#1697dd;--c2:#0b4fa8}
@@ -243,7 +244,7 @@ a,button,summary,input,select,label{touch-action:manipulation}
 .cat:hover .fan img:nth-child(1){transform:translate(-3%,-3%) scale(1.04)}
 .cat:hover .fan img:nth-child(2){transform:translate(5%,-5%) rotate(10deg)}
 .cat:hover .fan img:nth-child(3){transform:translate(6%,3%) rotate(-8deg)}
-.cat.photo{grid-column:span 4;min-height:178px;color:#fff;padding:1.35rem 1.5rem;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.82fr);gap:.75rem;background:linear-gradient(140deg,var(--c1),var(--c2));box-shadow:var(--sh-1),inset 0 1px 0 rgba(255,255,255,.3),inset 0 0 0 1px rgba(255,255,255,.12)}
+.cat.photo{grid-column:span 4;min-height:178px;color:#fff;padding:1.35rem 1.5rem;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.82fr);gap:.75rem;background:linear-gradient(105deg,var(--c2) 0%,var(--c2) 30%,var(--c1) 100%);box-shadow:var(--sh-1),inset 0 1px 0 rgba(255,255,255,.3),inset 0 0 0 1px rgba(255,255,255,.12)}
 .cat.photo:hover{box-shadow:var(--sh-2),inset 0 1px 0 rgba(255,255,255,.3),inset 0 0 0 1px rgba(255,255,255,.2)}
 .cat.photo::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 90% at 80% 55%,rgba(255,255,255,.28),transparent 70%);pointer-events:none}
 .cat.photo:nth-child(5){--c1:#19a6bd;--c2:#0b588c}
@@ -269,7 +270,7 @@ a,button,summary,input,select,label{touch-action:manipulation}
 @media (max-width:1060px){ .cat.mini{grid-column:span 4} .cat.photo{grid-column:span 6} }
 @media (max-width:860px){ .cat.feat{grid-column:span 12;min-height:220px} .cat.mini{grid-column:span 6} }
 @media (max-width:480px){ .cat.feat{padding:1.4rem 1.3rem;grid-template-columns:minmax(0,1fr) minmax(0,.85fr);min-height:200px} .cat-go span{display:none} }
-@media (max-width:560px){ .cat.photo{grid-template-columns:minmax(0,1fr);padding:1rem 1.05rem 1.1rem;min-height:0;gap:.7rem} .cat.photo .duo{order:-1;height:96px;min-height:0} .cat.photo .cat-txt{gap:.35rem} .cat.photo .cat-txt b{font-size:1.05rem} .cat-n{font-size:.88rem} }
+@media (max-width:560px){ .cat.photo{grid-template-columns:minmax(0,1fr);padding:1rem 1.05rem 1.1rem;min-height:0;gap:.7rem;background:linear-gradient(180deg,var(--c1) 0%,var(--c2) 56%)} .cat.photo .duo{order:-1;height:96px;min-height:0} .cat.photo .cat-txt{gap:.35rem} .cat.photo .cat-txt b{font-size:1.05rem} .cat-n{font-size:.88rem} }
 
 .results{background:linear-gradient(180deg,var(--surface),var(--surface-2));border-radius:var(--r-l);box-shadow:var(--sh-1),var(--gloss);padding:.5rem clamp(.9rem,2.2vw,1.75rem) 1rem}
 .rhead{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem 1.25rem;padding:1rem 0;border-bottom:1px solid var(--line)}
@@ -282,7 +283,7 @@ a,button,summary,input,select,label{touch-action:manipulation}
 .grp{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;margin:1.9rem 0 .2rem;padding-bottom:.6rem;border-bottom:2px solid var(--gold)}
 .grp h3{font-size:1.505rem}
 .tjump{display:flex;flex-wrap:wrap;gap:.5rem;padding:1.1rem 0 .1rem}
-.tjump button{all:unset;box-sizing:border-box;cursor:pointer;flex:none;white-space:nowrap;min-height:40px;padding:0 .95rem;border-radius:999px;font-weight:600;font-size:.95rem;color:var(--ink);background:rgba(147,192,255,.08);box-shadow:inset 0 0 0 1px var(--line);display:inline-flex;align-items:center;gap:.45rem}
+.tjump button{all:unset;box-sizing:border-box;cursor:pointer;flex:none;white-space:nowrap;min-height:44px;padding:0 .95rem;border-radius:999px;font-weight:600;font-size:.95rem;color:var(--ink);background:rgba(147,192,255,.08);box-shadow:inset 0 0 0 1px var(--line);display:inline-flex;align-items:center;gap:.45rem}
 .tjump button span{color:var(--muted);font-weight:500;font-size:.88rem}
 .tjump button:hover{box-shadow:inset 0 0 0 1.5px var(--link)}
 .tjump button[aria-pressed=true]{background:linear-gradient(180deg,var(--gold-hi),var(--gold));color:#1b1300;box-shadow:none}
@@ -301,7 +302,7 @@ a,button,summary,input,select,label{touch-action:manipulation}
 .pthumb svg{width:26px;height:26px}
 .pthumb.ph{background:rgba(147,192,255,.08);border-color:var(--line);color:var(--line-strong)}
 .pmain{display:grid;gap:.1rem;min-width:0}
-.pname{all:unset;cursor:pointer;font-weight:600;font-size:1.05rem;line-height:1.3;color:var(--ink)}
+.pname{all:unset;cursor:pointer;font-weight:600;font-size:1.05rem;line-height:1.3;color:var(--ink);display:inline-block;padding-block:.7rem;margin-block:-.7rem}
 .pname:hover{color:var(--link);text-decoration:underline}
 .pname:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:4px}
 .pdesc{font-size:.95rem;color:var(--muted)}
@@ -514,7 +515,7 @@ a,button,summary,input,select,label{touch-action:manipulation}
 .field label i{font-style:normal;font-weight:400;color:var(--muted)}
 .field input,.field textarea,.field select{font-size:1.05rem;padding:.85rem 1rem;border:0;box-shadow:inset 0 0 0 1.5px var(--line-strong);border-radius:14px;background:#0a1f49;color:var(--ink);width:100%;min-width:0;min-height:54px;outline:0;transition:box-shadow .12s,background .12s}
 .field select{-webkit-appearance:none;appearance:none;padding-right:2.6rem;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23b9c9ea' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .9rem center;background-size:20px}
-.field input[type=file]{padding:.7rem;font-size:.98rem}
+.field input[type=file]{padding:.7rem;font-size:1rem}
 .field input:focus,.field textarea:focus,.field select:focus{box-shadow:inset 0 0 0 2px var(--link),0 0 0 4px rgba(240,168,26,.35);background-color:#0a1f49}
 .field textarea{min-height:140px;resize:vertical;line-height:1.5}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
@@ -528,7 +529,7 @@ a,button,summary,input,select,label{touch-action:manipulation}
 .form-foot .btn{min-width:160px}
 .form-foot small{color:var(--muted);font-size:.98rem}
 .privacy-line{font-size:.95rem;color:var(--muted);line-height:1.45}
-.privacy-line a{color:var(--link);text-decoration:none;display:inline-block;padding-block:.6rem;margin-block:-.6rem;font-weight:600}
+.privacy-line a{color:var(--link);text-decoration:none;display:inline-block;padding-block:.75rem;margin-block:-.75rem;font-weight:600}
 .sent{box-shadow:inset 0 0 0 2px var(--gold);border-radius:var(--r-m);padding:1.25rem 1.4rem;display:grid;gap:.75rem}
 .sent b{font-family:var(--display);font-weight:600;font-size:1.29rem}
 .sent pre{margin:0;white-space:pre-wrap;font:inherit;font-size:.98rem;color:var(--muted);background:#0a1f49;padding:.9rem;border-radius:12px;max-height:220px;overflow:auto;box-shadow:inset 0 0 0 1px var(--line)}
@@ -913,7 +914,7 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
     <div class="wrap faq-grid">
       <div class="sec-head">
         <h2>Quick answers.</h2>
-        <p class="lede">Still stuck? <a href="#contact" style="color:var(--link);font-weight:600;text-decoration:none">Ask us</a>.</p>
+        <p class="lede">Still stuck? <a href="#contact" style="color:var(--link);font-weight:600;text-decoration:none;display:inline-block;padding-block:.6rem;margin-block:-.6rem">Ask us</a>.</p>
       </div>
       <div class="faq-list">
         <details><summary>Do you test pool water?</summary><div class="ans"><p>Yes, at both stores. $9, or free with any pool product. Bring a bottle of pool water.</p></div></details>
@@ -948,7 +949,7 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
           <div class="field"><label for="f-biz">Business <i>(optional)</i></label><input id="f-biz" name="business" autocomplete="organization"></div>
         </div>
         <div class="two">
-          <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" aria-describedby="e-phone"><small class="err" id="e-phone" role="alert"></small></div>
+          <div class="field"><label for="f-phone">Phone <i>(optional)</i></label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" aria-describedby="e-phone"><small class="err" id="e-phone" role="alert"></small></div>
           <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="e-email"><small class="err" id="e-email" role="alert"></small></div>
         </div>
         <div class="two">
@@ -1060,7 +1061,7 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
     </div>
     <p class="wordmark" aria-hidden="true">Northern Suppliers</p>
     <div class="ftr-base">
-      <p>&copy; <span id="year">2026</span> Northern Suppliers Pty Ltd. Mareeba and Atherton, Queensland. <span class="stamp">Site updated 25 Nov 2026, 12:38 pm</span></p>
+      <p>&copy; <span id="year">2026</span> Northern Suppliers Pty Ltd. Mareeba and Atherton, Queensland. <span class="stamp">Site updated 25 Nov 2026, 2:22 pm</span></p>
       <details class="privacy" id="privacy">
         <summary>Privacy</summary>
         <p>When you send an enquiry, we get what you typed (name, phone, email, message, any attachment) and use it only to reply. We keep it with our normal business records. We never sell or share it, and we don't add you to a mailing list.</p>
@@ -1225,6 +1226,12 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
       sent.scrollIntoView({block:'nearest'});
       try{ window.location.href=mail; }catch(err){}
     });
+    /* a field's error goes away as soon as what is typed is valid */
+    ['f-name','f-email','f-phone','f-msg'].forEach(function(id){ $(id).addEventListener('input',function(){
+      if(this.getAttribute('aria-invalid')!=='true') return;
+      var v=this.value.trim(),ok=id==='f-email'?/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v):id==='f-phone'?(!v||v.replace(/\D/g,'').length>=8):!!v;
+      if(ok){ this.setAttribute('aria-invalid','false'); $('e-'+id.slice(2)).textContent=''; }
+    }); });
     $('sent-copy').addEventListener('click',function(){ copyText($('sent-text').textContent,this); });
   }
 
@@ -1382,7 +1389,7 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
     $('qv-desc').textContent=p.desc;
     $('qv-specs').innerHTML=(p.brand?'<dt>Brand</dt><dd>'+esc(p.brand)+'</dd>':'')+'<dt>Type</dt><dd>'+esc(p.type)+'</dd><dt>SKU</dt><dd>'+esc(p.sku)+'</dd>'+(p.pid?'<dt>Product ID</dt><dd>'+esc(p.pid)+'</dd>':'')+specRows(p.pid);
     paintQvBuy();
-    if(!qv.open){ root.classList.add('lock'); qv.showModal(); }
+    if(!qv.open){ root.classList.add('lock'); qv.showModal(); dlgOpened(); }
     track('quick_view',{product:p.name});
   }
   $('qv-close').addEventListener('click',function(){ qv.close(); });
@@ -1391,7 +1398,7 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
   qv.addEventListener('close',function(){ qvIdx=-1; });
 
   /* Drawer */
-  function openDrawer(){ if(qv.open) qv.close(); toastEl.hidden=true; if(!drawer.open){ root.classList.add('lock'); drawer.showModal(); } paintLines(); }
+  function openDrawer(){ if(qv.open){ dlgSwap=true; qv.close(); dlgSwap=false; } toastEl.hidden=true; if(!drawer.open){ root.classList.add('lock'); drawer.showModal(); dlgOpened(); } paintLines(); }
   orderBtn.addEventListener('click',openDrawer);
   $('toast-view').addEventListener('click',openDrawer);
   $('drawerclose').addEventListener('click',function(){ drawer.close(); });
@@ -1415,8 +1422,7 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
     $('f-topic').value='Click and collect order'; $('f-collect').value=pickStore;
     $('f-msg').value=txt;
     drawer.close();
-    $('contact').scrollIntoView();
-    var m=$('f-name'); if(m.value) m=$('f-msg'); m.focus({preventScroll:true});
+    afterDlg(function(){ $('contact').scrollIntoView(); var m=$('f-name'); if(m.value) m=$('f-msg'); m.focus({preventScroll:true}); });
     track('send_order',{lines:cart.length,store:pickStore});
   });
 
@@ -1453,8 +1459,44 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
       '<div class="pcodes"><span>SKU<code>'+hl(p.sku,terms)+'</code></span>'+(p.pid?'<span>ID<code>'+hl(String(p.pid),terms)+'</code></span>':'')+'</div>'+
       ctlw(i)+'</div>';
   }
+  /* Back button and shareable links: the open category, search and product type live in the address,
+     so Back returns to the categories instead of leaving the site, and a link can open a category. */
+  var navPushed=false,navApplying=true,LISTRE=/^#(c|q|t)=/;
+  function stateHash(){ var p=[]; if(activeCat) p.push('c='+encodeURIComponent(activeCat)); if(q.value.trim()) p.push('q='+encodeURIComponent(q.value.trim())); if(activeType) p.push('t='+encodeURIComponent(activeType)); return p.length?'#'+p.join('&'):''; }
+  function syncUrl(){
+    if(navApplying||!history.pushState) return;
+    var h=stateHash(),cur=LISTRE.test(location.hash);
+    try{
+      if(h){ if(h===location.hash) return; if(cur) history.replaceState(history.state,'',h); else { history.pushState(null,'',h); navPushed=true; } }
+      else if(cur){ if(navPushed){ navPushed=false; history.back(); } else history.replaceState(null,'',location.pathname+location.search); }
+    }catch(e){}
+  }
+  function applyHash(scroll){
+    var st={c:null,q:'',t:null};
+    if(LISTRE.test(location.hash)) location.hash.slice(1).split('&').forEach(function(kv){ var i=kv.indexOf('='),k=kv.slice(0,i),v=''; try{ v=decodeURIComponent(kv.slice(i+1)); }catch(e){} if(k==='c'&&CATS.indexOf(v)>-1) st.c=v; else if(k==='q') st.q=v.slice(0,80); else if(k==='t') st.t=v; });
+    else if(location.hash&&location.hash!=='#top-sellers') return;
+    if(st.c===activeCat&&st.q===q.value.trim()&&st.t===activeType) return;
+    navApplying=true;
+    activeCat=st.c; typeCat=st.c; q.value=st.q; hq.value=st.q; setChip(st.c); activeType=st.q?null:st.t; paintList();
+    navApplying=false;
+    if(scroll!==false) toResults();
+  }
+  /* Back also closes an open product view or order list instead of leaving the page */
+  var dlgEntry=false,dlgSwap=false,dlgBack=false,dlgThen=null;
+  function dlgOpened(){ if(dlgEntry||!history.pushState) return; try{ history.pushState({dlg:1},'',location.href); dlgEntry=true; }catch(e){} }
+  function afterDlg(fn){ if(!dlgEntry&&!dlgBack){ fn(); return; } dlgThen=fn; setTimeout(function(){ if(dlgThen===fn){ dlgThen=null; fn(); } },600); }
+  [qv,drawer].forEach(function(d){ d.addEventListener('close',function(){
+    if(dlgSwap||!dlgEntry||qv.open||drawer.open) return;
+    dlgEntry=false; if(history.state&&history.state.dlg){ dlgBack=true; history.back(); }
+  }); });
+  window.addEventListener('popstate',function(){
+    if(dlgBack){ dlgBack=false; var f=dlgThen; dlgThen=null; if(f) setTimeout(f,40); return; }
+    if(dlgEntry&&!(history.state&&history.state.dlg)){ dlgEntry=false; if(qv.open) qv.close(); if(drawer.open) drawer.close(); return; }
+    applyHash();
+  });
   var renderToken=0,activeType=null,typeCat=null,COLL=window.Intl&&Intl.Collator?new Intl.Collator('en',{numeric:true}):{compare:function(a,b){ return a<b?-1:a>b?1:0; }};
-  function renderList(){
+  function renderList(){ paintList(); syncUrl(); }
+  function paintList(){
     var f=find(q.value,activeCat);
     if(activeCat!==typeCat||f.has){ activeType=null; typeCat=activeCat; }
     var catsH=$('cats-h');
@@ -1571,6 +1613,7 @@ dialog::backdrop{background:rgba(5,14,34,.74);}
   })();
 
   renderCats(); render(); renderList();
+  navApplying=false; if(LISTRE.test(location.hash)){ applyHash(false); setTimeout(toResults,0); }
   $('year').textContent=String(new Date().getFullYear());
 })();
 </script>
