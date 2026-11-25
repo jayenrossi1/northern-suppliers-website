@@ -50,22 +50,52 @@ def stamp(s):
     t = 'Site updated ' + now.strftime('%-d %b %Y, %-I:%M %p').replace('AM', 'am').replace('PM', 'pm')
     return re.sub(r'Site updated[^<]*', t, s, count=1)
 
+EASY_BRANDS = ['Victorinox', 'Kilner', 'Pyrolux', 'Bakemaster', 'Scanpan', 'Chasseur', 'Avanti', 'Typhoon', 'Brabantia', 'OXO', 'Glasslock',
+               'Joie', 'Stanley', 'Cuisinart', 'Bohemia', 'Gefu', 'Prepara', 'Swissmar', "Chef's Choice", 'Zippo', 'Wenger', 'True Utility']
+GROUP_ORDER = ['Knives', 'Sharpening', 'Pocket knives and tools', 'Cookware', 'Bakeware', 'Kilner jars and preserving', 'Drink bottles and cups',
+               'Tea and coffee', 'Lunch boxes', 'Glassware and bar', 'Tableware and serving', 'Storage', 'Kitchen tools', 'Butcher supplies', 'Napkins']
+
+def ease(p):
+    """1 easy: well-known brand with its own product pictures. 2 medium. 3 hard: Dolphin spare parts."""
+    if p['type'] == 'Dolphin parts and accessories': return 3
+    if p['type'] == 'Dolphin pool cleaners' or p.get('brand') in EASY_BRANDS: return 1
+    return 2
+
 def needed(P):
     need = [p for p in P if not p.get('img')]
     def key(p):
-        t = p['type']; g = 0 if t == 'Dolphin pool cleaners' else 1 if t == 'Dolphin parts and accessories' else 2
-        return (g, CATS.index(p['cat']), p['name'].lower())
+        g = GROUP_ORDER.index(p['type']) if p['type'] in GROUP_ORDER else len(GROUP_ORDER) + CATS.index(p['cat'])
+        b = EASY_BRANDS.index(p['brand']) if p.get('brand') in EASY_BRANDS else 99
+        return (ease(p), g, b, (p.get('brand') or 'zzz').lower(), p['name'].lower())
     return sorted(need, key=key)
 
 def xlsx(P, out):
     import openpyxl
-    from openpyxl.styles import Font, PatternFill
+    from openpyxl.styles import Font, PatternFill, Alignment
     wb = openpyxl.Workbook(); ws = wb.active; ws.title = 'Photos needed'
-    ws.append(['#', 'Category', 'Product', 'Pack / size', 'Product ID', 'Sent?'])
-    for n, p in enumerate(needed(P), 1): ws.append([n, p['cat'], p['name'], p['desc'], p['pid'], None])
+    ws.append(['#', 'How easy', 'Group', 'Brand', 'Product', 'Pack / details', 'SKU', 'Product ID', 'Sent?'])
+    label = {1: 'Easy', 2: 'Medium', 3: 'Hard'}; fill = {1: 'D9F2D9', 2: 'FFF2CC', 3: 'F8D7DA'}
+    rows = needed(P)
+    for n, p in enumerate(rows, 1):
+        e = ease(p)
+        ws.append([n, label[e], p['type'], p.get('brand') or '', p['name'], p['desc'], p['sku'], p['pid'], None])
+        ws.cell(row=n + 1, column=2).fill = PatternFill('solid', fgColor=fill[e])
     for c in ws[1]: c.font = Font(bold=True, color='FFFFFF'); c.fill = PatternFill('solid', fgColor='0B2A5C')
-    for col, w in zip('ABCDEF', [5, 22, 58, 44, 12, 8]): ws.column_dimensions[col].width = w
-    ws.freeze_panes = 'A2'; ws.auto_filter.ref = ws.dimensions; wb.save(out)
+    for col, w in zip('ABCDEFGHI', [6, 10, 28, 18, 60, 36, 16, 12, 8]): ws.column_dimensions[col].width = w
+    ws.freeze_panes = 'A2'; ws.auto_filter.ref = ws.dimensions
+    # one line per group, in the same order, so the size of each job is clear
+    ws2 = wb.create_sheet('Groups'); ws2.append(['How easy', 'Group', 'Photos needed', 'Starts at row #'])
+    seen = {}
+    for n, p in enumerate(rows, 1):
+        k = (label[ease(p)], p['type'])
+        if k not in seen: seen[k] = [0, n]
+        seen[k][0] += 1
+    for (e, g), (cnt, start) in seen.items():
+        ws2.append([e, g, cnt, start]); ws2.cell(row=ws2.max_row, column=1).fill = PatternFill('solid', fgColor=fill[{'Easy': 1, 'Medium': 2, 'Hard': 3}[e]])
+    ws2.append(['', 'Total', len(rows), ''])
+    for c in ws2[1]: c.font = Font(bold=True, color='FFFFFF'); c.fill = PatternFill('solid', fgColor='0B2A5C')
+    for col, w in zip('ABCD', [10, 30, 15, 16]): ws2.column_dimensions[col].width = w
+    ws2.freeze_panes = 'A2'; wb.save(out)
 
 def main():
     jobs = json.loads(sys.argv[1]); out = sys.argv[2] if len(sys.argv) > 2 else None
